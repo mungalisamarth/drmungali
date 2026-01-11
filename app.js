@@ -1,8 +1,8 @@
 // ====== CONFIG ======
 const CONFIG = {
   youtubeChannelUrl: "https://www.youtube.com/@DivineNectar",
-  youtubeApiKey: "", // optional
-  youtubeChannelId: "", // required if using API
+  youtubeApiKey: "AIzaSyDYhvyCK-gdbSuM6J9fiauXPmyArzkXcCg", // optional
+  youtubeChannelId: "UCjIsdWpYGZspAlXMM_3lcLA", // required if using API
   youtubeMaxResults: 6,
 
   // Replace with your secure donation link (Razorpay/Instamojo/Donorbox/etc.)
