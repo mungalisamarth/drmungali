@@ -126,11 +126,18 @@ p{ line-height:1.7; margin:0.6rem 0; }
 .hero-bg{
   position:absolute; inset:0;
   background:
-    linear-gradient(90deg, rgba(11,11,12,0.92) 0%, rgba(11,11,12,0.68) 55%, rgba(11,11,12,0.92) 100%),
+    /* warm saffron tint */
+    linear-gradient(0deg, rgba(250,186,88,0.10), rgba(250,186,88,0.10)),
+    /* softer readability gradient (less black) */
+    linear-gradient(90deg,
+      rgba(11,11,12,0.58) 0%,
+      rgba(11,11,12,0.36) 48%,
+      rgba(11,11,12,0.58) 100%
+    ),
     url("./assets/DSC02891.jpeg");
   background-size: cover;
   background-position: center top;
-  filter: saturate(1.04) contrast(1.06);
+  filter: saturate(1.08) contrast(1.05);
   transform: scale(1.02);
   z-index: 0;
 }
