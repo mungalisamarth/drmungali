@@ -69,11 +69,13 @@ p{ line-height:1.7; margin:0.6rem 0; }
   border-radius: 12px;
   background: rgba(255,255,255,0.04);
   flex-shrink: 0;
+  overflow: hidden; /* important */
 }
 
-.brand-icon{
-  width:20px;      /* key control */
-  height:auto;
+.brand-mark img.brand-icon{
+  width:20px !important;
+  height:20px !important;
+  object-fit: contain;
   display:block;
 }
 .brand-text{ font-weight:600; letter-spacing:0.2px; }
