@@ -61,10 +61,20 @@ p{ line-height:1.7; margin:0.6rem 0; }
 
 .brand{ display:flex; gap:10px; align-items:center; }
 .brand-mark{
-  width:34px; height:34px; display:grid; place-items:center;
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
   border:1px solid rgba(255,255,255,0.18);
   border-radius: 12px;
   background: rgba(255,255,255,0.04);
+  flex-shrink: 0;
+}
+
+.brand-icon{
+  width:20px;      /* key control */
+  height:auto;
+  display:block;
 }
 .brand-text{ font-weight:600; letter-spacing:0.2px; }
 
