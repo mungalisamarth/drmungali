@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Mungali — Science, Spirituality & Seva</title>
+  <meta name="description" content="Dr. Mungali — a space where science, spirituality, and selfless service meet. Watch Divine Nectar on YouTube and support ongoing projects." />
+
+  <meta property="og:title" content="Dr. Mungali — Science, Spirituality & Seva" />
+  <meta property="og:description" content="A soulful space where science, spirituality, and selfless service meet." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <!-- Top bar -->
+  <header class="header">
+    <a class="brand" href="#home" aria-label="Go to home">
+      <span class="brand-mark">ॐ</span>
+      <span class="brand-text">Dr. Mungali</span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="#about">About</a>
+      <a href="#videos">Videos</a>
+      <a href="#projects">Projects</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#support">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="section hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Science-rooted • Spirit-led • Service-first</p>
+          <h1>Where the rigor of science meets the grace of devotion.</h1>
+          <p class="subhead">
+            Dr. Mungali’s work is a unique amalgamation of science and spirituality—guided by the blessings of Neem Karoli Maharaj (Maharajji) and expressed through decades of selfless service.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" id="ytCta" href="https://www.youtube.com/" target="_blank" rel="noopener">
+              Watch on YouTube
+            </a>
+            <a class="btn ghost" href="#support">Support the Mission</a>
+          </div>
+
+          <div class="trust-row">
+            <div class="trust-pill">Divine Nectar • YouTube</div>
+            <div class="trust-pill">Talks • Satsangs • Stories</div>
+            <div class="trust-pill">Projects • Retreats • Seva</div>
+          </div>
+        </div>
+
+        <div class="hero-card" role="img" aria-label="A calm, minimal visual panel">
+          <div class="hero-card-inner">
+            <p class="quote">
+              “May this space offer you clarity, courage, and a little more love in the heart.”
+            </p>
+            <p class="quote-by">— Dr. Mungali</p>
+            <!-- Optional image -->
+            <!-- <img class="portrait" src="./assets/dr-mungali.jpg" alt="Dr. Mungali portrait"> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Dr. Mungali</h2>
+        <p class="lead">
+          This is a soulful home for stories, teachings, and projects inspired by the Himalayan saints—shared with simplicity, sincerity, and scientific clarity.
+        </p>
+
+        <div class="cards three">
+          <article class="card">
+            <h3>Science</h3>
+            <p>Grounded thinking, clarity, and practical insight—without losing wonder.</p>
+          </article>
+          <article class="card">
+            <h3>Spirituality</h3>
+            <p>Bhakti, grace, and lived devotion—blessed by Neem Karoli Maharaj (Maharajji).</p>
+          </article>
+          <article class="card">
+            <h3>Seva</h3>
+            <p>Selfless service as a life practice—supporting people, community, and dharma.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Videos -->
+    <section id="videos" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Latest Videos</h2>
+            <p class="muted">Auto-fetch thumbnails with a YouTube API key, or use the embedded playlist fallback.</p>
+          </div>
+          <a class="text-link" id="channelLink" href="https://www.youtube.com/" target="_blank" rel="noopener">
+            Visit Channel →
+          </a>
+        </div>
+
+        <!-- Auto-filled video grid -->
+        <div class="video-grid" id="videoGrid" aria-live="polite"></div>
+
+        <!-- Fallback embed (always visible, feels nice even with API) -->
+        <div class="embed-wrap">
+          <iframe
+            id="playlistEmbed"
+            title="Divine Nectar playlist"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed?listType=playlist&list=PL_PLACEHOLDER"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <p class="muted tiny">Tip: Replace <code>PL_PLACEHOLDER</code> with your playlist ID, or enable API in <code>app.js</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects & Undertakings</h2>
+        <p class="lead">
+          Donations help convert intent into impact—supporting real-world work, documentation, and community offerings.
+        </p>
+
+        <div class="cards three">
+          <article class="card">
+            <h3>Offline Satsangs & Retreats</h3>
+            <p>Gatherings that bring teachings into lived experience, community, and practice.</p>
+          </article>
+          <article class="card">
+            <h3>Books & Documentation</h3>
+            <p>Commissioning and publishing work on Himalayan saints and timeless wisdom.</p>
+          </article>
+          <article class="card">
+            <h3>Films, Temples & Bhandaras</h3>
+            <p>Supporting devotional projects, service events, and heritage preservation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support / Donations -->
+    <section id="support" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Support the Mission</h2>
+            <p class="lead">
+              If this work helps you, consider supporting it—so more service, stories, and projects can take shape.
+            </p>
+          </div>
+        </div>
+
+        <div class="support-grid">
+          <div class="card">
+            <h3>UPI (India)</h3>
+            <p class="muted">Scan or copy the UPI ID.</p>
+
+            <div class="upi-row">
+              <code id="upiId">yourupi@bank</code>
+              <button class="btn small" id="copyUpiBtn">Copy</button>
+            </div>
+
+            <div class="qr-wrap">
+              <img src="./assets/upi-qr.png" alt="UPI QR code" class="qr" />
+            </div>
+
+            <p class="tiny muted">
+              Replace the UPI ID and QR image in <code>assets/</code>.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Card / International</h3>
+            <p class="muted">
+              For cards and international support, use a secure hosted donation link (recommended).
+            </p>
+            <a class="btn primary" id="donationLink" href="#" target="_blank" rel="noopener">
+              Donate via Payment Link
+            </a>
+            <p class="tiny muted">
+              Suggested: Razorpay Payment Pages, Instamojo, Donorbox, or a verified platform you already use.
+            </p>
+
+            <hr class="sep" />
+
+            <h4 class="mini">Transparency note (optional)</h4>
+            <p class="muted tiny">
+              “Donations fund offline satsangs/retreats, documentation projects, service activities, and production costs for sharing this work widely.”
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="lead">Send a note. We’ll respond as soon as possible.</p>
+
+        <!-- Formspree: replace the action URL with your endpoint -->
+        <form class="form" action="https://formspree.io/f/yourFormId" method="POST">
+          <label>
+            <span>Name</span>
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" autocomplete="email" required />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <button class="btn primary" type="submit">Send</button>
+          <p class="tiny muted">Tip: Formspree works great with GitHub Pages.</p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <p class="tiny muted">© <span id="year"></span> Dr. Mungali • All rights reserved</p>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a id="footerYt" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
