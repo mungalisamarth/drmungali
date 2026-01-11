@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dr. Mungali — Science, Spirituality & Seva</title>
-  <meta name="description" content="Dr. Mungali — a space where science, spirituality, and selfless service meet. Watch Divine Nectar on YouTube and support ongoing projects." />
+  <title>Dr. Mungali — Divine Nectar</title>
+  <meta name="description" content="Dr. Mungali — Science-rooted. Spirit-led. Service-first. Stories, satsang, and seva inspired by the Himalayan saints and Neem Karoli Maharaj." />
 
-  <meta property="og:title" content="Dr. Mungali — Science, Spirituality & Seva" />
-  <meta property="og:description" content="A soulful space where science, spirituality, and selfless service meet." />
+  <meta property="og:title" content="Dr. Mungali — Divine Nectar" />
+  <meta property="og:description" content="Science-rooted. Spirit-led. Service-first. Stories, satsang, and seva inspired by the Himalayan saints." />
   <meta property="og:type" content="website" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css" />
+
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <!-- Top bar -->
+  <!-- Header -->
   <header class="header">
     <a class="brand" href="#home" aria-label="Go to home">
-      <span class="brand-mark">ॐ</span>
+      <span class="brand-mark" aria-hidden="true">ॐ</span>
       <span class="brand-text">Dr. Mungali</span>
     </a>
 
@@ -38,19 +39,32 @@
     </nav>
   </header>
 
+  <!-- Announcement strip -->
+  <div class="notice" id="noticeBar">
+    <div class="container notice-inner">
+      <span class="notice-tag">Upcoming</span>
+      <span class="notice-text" id="noticeText">Live online Satsang • 27 Jan 2026 • 6:00 PM IST</span>
+      <a class="notice-link" id="noticeLink" href="#contact">Get details →</a>
+    </div>
+  </div>
+
   <main>
     <!-- Hero -->
     <section id="home" class="section hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="kicker">Science-rooted • Spirit-led • Service-first</p>
+
           <h1>Where the rigor of science meets the grace of devotion.</h1>
+
           <p class="subhead">
             Dr. Mungali’s work is a unique amalgamation of science and spirituality—guided by the blessings of Neem Karoli Maharaj (Maharajji) and expressed through decades of selfless service.
           </p>
 
           <div class="cta-row">
-            <a class="btn primary" id="ytCta" href="https://www.youtube.com/" target="_blank" rel="noopener">
+            <a class="btn primary" id="ytCta" href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener">
               Watch on YouTube
             </a>
             <a class="btn ghost" href="#support">Support the Mission</a>
@@ -63,21 +77,20 @@
           </div>
         </div>
 
-        <div class="hero-card" role="img" aria-label="A calm, minimal visual panel">
-          <div class="hero-card-inner">
-            <p class="quote">
-              “May this space offer you clarity, courage, and a little more love in the heart.”
-            </p>
-            <p class="quote-by">— Dr. Mungali</p>
-            <!-- Optional image -->
-            <!-- <img class="portrait" src="./assets/dr-mungali.jpg" alt="Dr. Mungali portrait"> -->
+        <div class="hero-panel">
+          <div class="hero-panel-inner">
+            <img class="hero-cutout" src="./assets/transparent-bg.png" alt="Neem Karoli Maharaj and Dr. Mungali" />
+            <div class="hero-quote">
+              <p class="quote">“May this space offer you clarity, courage, and a little more love in the heart.”</p>
+              <p class="quote-by">— Dr. Mungali</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="section">
+    <section id="about" class="section band-deep">
       <div class="container">
         <h2>About Dr. Mungali</h2>
         <p class="lead">
@@ -102,22 +115,20 @@
     </section>
 
     <!-- Videos -->
-    <section id="videos" class="section alt">
+    <section id="videos" class="section band-deep">
       <div class="container">
         <div class="section-head">
           <div>
             <h2>Latest Videos</h2>
-            <p class="muted">Auto-fetch thumbnails with a YouTube API key, or use the embedded playlist fallback.</p>
+            <p class="muted">New uploads appear here automatically.</p>
           </div>
-          <a class="text-link" id="channelLink" href="https://www.youtube.com/" target="_blank" rel="noopener">
+          <a class="text-link" id="channelLink" href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener">
             Visit Channel →
           </a>
         </div>
 
-        <!-- Auto-filled video grid -->
         <div class="video-grid" id="videoGrid" aria-live="polite"></div>
 
-        <!-- Fallback embed (always visible, feels nice even with API) -->
         <div class="embed-wrap">
           <iframe
             id="playlistEmbed"
@@ -129,17 +140,17 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
-          <p class="muted tiny">Tip: Replace <code>PL_PLACEHOLDER</code> with your playlist ID, or enable API in <code>app.js</code>.</p>
+          <p class="muted tiny">Optional: Replace <code>PL_PLACEHOLDER</code> with a playlist ID if you want a curated set.</p>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="section">
+    <section id="projects" class="section band-maroon">
       <div class="container">
         <h2>Projects & Undertakings</h2>
         <p class="lead">
-          Donations help convert intent into impact—supporting real-world work, documentation, and community offerings.
+          Support helps convert intent into impact—funding real-world offerings, documentation, and service.
         </p>
 
         <div class="cards three">
@@ -159,14 +170,14 @@
       </div>
     </section>
 
-    <!-- Support / Donations -->
-    <section id="support" class="section alt">
+    <!-- Support -->
+    <section id="support" class="section band-saffron">
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Support the Mission</h2>
+            <h2>Your support makes this possible</h2>
             <p class="lead">
-              If this work helps you, consider supporting it—so more service, stories, and projects can take shape.
+              If this work helps you, consider supporting it—so more seva, stories, and projects can take shape.
             </p>
           </div>
         </div>
@@ -174,39 +185,33 @@
         <div class="support-grid">
           <div class="card">
             <h3>UPI (India)</h3>
-            <p class="muted">Scan or copy the UPI ID.</p>
+            <p class="muted">Scan the QR or copy the UPI ID.</p>
 
             <div class="upi-row">
               <code id="upiId">yourupi@bank</code>
-              <button class="btn small" id="copyUpiBtn">Copy</button>
+              <button class="btn small" id="copyUpiBtn" type="button">Copy</button>
             </div>
 
             <div class="qr-wrap">
               <img src="./assets/upi-qr.png" alt="UPI QR code" class="qr" />
             </div>
 
-            <p class="tiny muted">
-              Replace the UPI ID and QR image in <code>assets/</code>.
-            </p>
+            <p class="tiny muted">Replace <code>assets/upi-qr.png</code> with your actual QR image.</p>
           </div>
 
           <div class="card">
             <h3>Card / International</h3>
-            <p class="muted">
-              For cards and international support, use a secure hosted donation link (recommended).
-            </p>
+            <p class="muted">Use a secure hosted payment page (recommended).</p>
+
             <a class="btn primary" id="donationLink" href="#" target="_blank" rel="noopener">
               Donate via Payment Link
             </a>
-            <p class="tiny muted">
-              Suggested: Razorpay Payment Pages, Instamojo, Donorbox, or a verified platform you already use.
-            </p>
 
             <hr class="sep" />
 
-            <h4 class="mini">Transparency note (optional)</h4>
+            <h4 class="mini">Where donations go</h4>
             <p class="muted tiny">
-              “Donations fund offline satsangs/retreats, documentation projects, service activities, and production costs for sharing this work widely.”
+              Offline satsangs and retreats, documentation and publishing, seva activities, and production costs for sharing this work widely.
             </p>
           </div>
         </div>
@@ -214,12 +219,11 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section band-deep">
       <div class="container">
         <h2>Contact</h2>
         <p class="lead">Send a note. We’ll respond as soon as possible.</p>
 
-        <!-- Formspree: replace the action URL with your endpoint -->
         <form class="form" action="https://formspree.io/f/yourFormId" method="POST">
           <label>
             <span>Name</span>
@@ -237,17 +241,17 @@
           </label>
 
           <button class="btn primary" type="submit">Send</button>
-          <p class="tiny muted">Tip: Formspree works great with GitHub Pages.</p>
+          <p class="tiny muted">Tip: Replace the Formspree URL with your own endpoint.</p>
         </form>
       </div>
     </section>
 
     <footer class="footer">
       <div class="container footer-row">
-        <p class="tiny muted">© <span id="year"></span> Dr. Mungali • All rights reserved</p>
+        <p class="tiny muted">© <span id="year"></span> Dr. Mungali • Divine Nectar</p>
         <div class="footer-links">
           <a href="#home">Home</a>
-          <a id="footerYt" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+          <a id="footerYt" href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener">YouTube</a>
         </div>
       </div>
     </footer>
