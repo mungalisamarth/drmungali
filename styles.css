@@ -143,12 +143,13 @@ p{ line-height:1.7; margin:0.6rem 0; }
     /* softer readability gradient (less black) */
     linear-gradient(90deg,
       rgba(11,11,12,0.58) 0%,
-      rgba(11,11,12,0.36) 48%,
+      rgba(11,11,12,0.28) 48%,
       rgba(11,11,12,0.58) 100%
     ),
     url("./assets/hero-home.png");
   background-size: cover;
-  background-position: center top;
+  /* key change: bias the photo left so right side stays cleaner for text */
+  background-position: left top;
   filter: saturate(1.08) contrast(1.05);
   transform: scale(1.02);
   z-index: 0;
@@ -162,6 +163,34 @@ p{ line-height:1.7; margin:0.6rem 0; }
   align-items: stretch;
 }
 
+/* ===== HERO: right-side text + pills near bottom (DESKTOP/TABLET) ===== */
+/* This targets your left column without requiring HTML changes */
+.hero-grid > :first-child{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;   /* pushes content lower */
+  align-items:flex-end;        /* pushes content to the right */
+  text-align:right;
+  min-height: 560px;           /* creates room so pills can live at bottom */
+  padding-right: 4px;
+}
+
+/* keep text a bit narrower so it sits in the “empty” right area */
+.hero-grid > :first-child .subhead,
+.hero-grid > :first-child .lead,
+.hero-grid > :first-child p{
+  max-width: 60ch;
+}
+
+/* right-align the buttons and pills */
+.cta-row{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 16px; justify-content:flex-end; }
+.trust-row{
+  display:flex; flex-wrap:wrap; gap: 10px;
+  margin-top: auto;            /* pins pills toward the bottom of the hero column */
+  justify-content:flex-end;
+  padding-top: 14px;
+}
+
 .kicker{
   color: rgba(255,255,255,0.76);
   letter-spacing: 0.2px;
@@ -171,7 +200,6 @@ p{ line-height:1.7; margin:0.6rem 0; }
 
 .subhead{ color: rgba(255,255,255,0.78); max-width: 72ch; }
 
-.cta-row{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 16px; }
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   padding: 12px 16px;
@@ -191,10 +219,6 @@ p{ line-height:1.7; margin:0.6rem 0; }
 .btn.ghost{ background: rgba(255,255,255,0.04); }
 .btn.small{ padding: 10px 12px; font-size: 0.92rem; }
 
-.trust-row{
-  display:flex; flex-wrap:wrap; gap: 10px;
-  margin-top: 18px;
-}
 .trust-pill{
   padding: 8px 12px;
   border-radius: 999px;
@@ -373,12 +397,25 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
 /* Responsive */
 @media (max-width: 920px){
   .hero-grid{ grid-template-columns: 1fr; }
+  /* when stacked, don't force right alignment */
+  .hero-grid > :first-child{
+    min-height: 0;
+    align-items:flex-start;
+    text-align:left;
+  }
+  .cta-row{ justify-content:flex-start; }
+  .trust-row{ justify-content:flex-start; margin-top: 18px; padding-top: 0; }
+
   .cards.three{ grid-template-columns: 1fr; }
   .video-grid{ grid-template-columns: 1fr 1fr; }
   .support-grid{ grid-template-columns: 1fr; }
   .embed-wrap iframe{ height: 300px; }
   .notice{ top: 64px; }
+
+  /* help keep faces clearer on mobile/tablet by moving image focus slightly up */
+  .hero-bg{ background-position: center 18%; }
 }
+
 @media (max-width: 740px){
   .menu-btn{ display:block; }
   .nav{
@@ -399,7 +436,16 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   .video-grid{ grid-template-columns: 1fr; }
   .footer-row{ flex-direction:column; align-items:flex-start; }
   .notice{ top: 64px; }
+
+  /* mobile: keep hero copy low and reduce chance of covering faces */
+  .hero-grid > :first-child{
+    justify-content:flex-end;
+  }
+  .hero-bg{
+    background-position: center 22%;
+  }
 }
+
 .nav a.active {
   color: #f2a43a;
   font-weight: 600;
