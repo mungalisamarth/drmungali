@@ -15,7 +15,9 @@
   --shadow: 0 14px 40px rgba(0,0,0,0.45);
   --max: 980px;
 }
-
+html {
+  background: var(--bg);
+}
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 body{
