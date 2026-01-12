@@ -292,7 +292,47 @@ section{
   }
   .cardMedia{ height: 210px; }
 }
-.nav a.active {
-  color: #f2a43a;
-  font-weight: 600;
+
+.about-hero{
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 420px; /* mobile-friendly */
 }
+
+.about-hero__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-hero__overlay{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /* Push text to the bottom and keep it readable */
+  padding: 18px 18px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.70),
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.00)
+  );
+
+  /* optional: keep text from growing too tall on the face */
+  max-width: 38ch;
+}
+
+.about-hero__overlay h1{
+  margin: 8px 0 6px;
+}
+
+.about-hero__overlay .kicker{
+  margin: 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity:
