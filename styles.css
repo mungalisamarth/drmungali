@@ -404,3 +404,7 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
 .video img {
   border-radius: 0 !important;
 }
+.video {
+  border-radius: 12px;
+  overflow: hidden; /* keeps square image clean inside */
+}
