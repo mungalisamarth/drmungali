@@ -145,7 +145,8 @@ section{
 }
 .lede{
   margin: 0;
-  max-width: 32ch;
+  max-width: none;        /* let it use available width */
+  width: 100%;            /* fill the hero copy area */
   color: rgba(255,255,255,0.82);
   font-size: 15px;
   line-height: 1.45;
