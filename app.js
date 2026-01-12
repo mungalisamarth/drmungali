@@ -92,7 +92,7 @@ async function loadLatestVideos() {
 
     grid.innerHTML = items.map(item => {
       const vid = item.id.videoId;
-     const title = decodeHtml(item.snippet.title || "Video");
+      const title = item.snippet.title || "Video";
       const thumb = item.snippet.thumbnails?.high?.url || item.snippet.thumbnails?.medium?.url || "";
       const date = item.snippet.publishedAt ? new Date(item.snippet.publishedAt).toLocaleDateString() : "";
       const url = `https://www.youtube.com/watch?v=${vid}`;
@@ -117,11 +117,7 @@ async function loadLatestVideos() {
     `;
   }
 }
-function decodeHtml(str){
-  const t = document.createElement("textarea");
-  t.innerHTML = str;
-  return t.value;
-}
+
 function escapeHtml(str) {
   return String(str)
     .replaceAll("&", "&amp;")
