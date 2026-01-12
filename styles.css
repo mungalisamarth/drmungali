@@ -412,109 +412,57 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   .embed-wrap iframe{ height: 300px; }
   .notice{ top: 64px; }
 
-  /* help keep faces clearer on mobile/tablet by moving image focus slightly up */
-  .hero-bg{ background-position: center 18%; }
-}
+/* =========================================================
+   HERO UX OVERRIDES (paste at VERY END of styles.css)
+   ========================================================= */
 
-@media (max-width: 740px){
-  .menu-btn{ display:block; }
-  .nav{
-    position: absolute;
-    top: 64px; right: 4vw; left: 4vw;
-    flex-direction:column;
-    align-items:stretch;
-    gap: 10px;
-    padding: 14px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.14);
-    background: rgba(11,11,12,0.92);
-    display:none;
-  }
-  .nav.open{ display:flex; }
-  .nav a{ padding: 10px 10px; border-radius: 12px; }
-  .nav-cta{ text-align:center; }
-  .video-grid{ grid-template-columns: 1fr; }
-  .footer-row{ flex-direction:column; align-items:flex-start; }
-  .notice{ top: 64px; }
-
-  /* mobile: keep hero copy low and reduce chance of covering faces */
+/* DESKTOP/TABLET: move the whole left hero column to the RIGHT */
+@media (min-width: 741px){
   .hero-grid > :first-child{
-    justify-content:flex-end;
-  }
-  .hero-bg{
-    background-position: center 22%;
-  }
-}
+    /* keep your existing flex behavior */
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+    text-align: right !important;
 
-.nav a.active {
-  color: #f2a43a;
-  font-weight: 600;
-}
-/* ============================= */
-/* HERO — MOBILE OVERRIDES */
-/* ============================= */
-@media (max-width: 768px) {
-
-  /* Collapse grid cleanly */
-  .hero-grid{
-    grid-template-columns: 1fr;
+    /* THIS is what actually pushes the block to the right side */
+    max-width: 640px;          /* tune: 560–720px based on taste */
+    margin-left: auto;         /* pushes it to the right within its grid track */
+    min-height: 560px;         /* keeps pills lower */
   }
 
-  /* Text column behavior on mobile */
-  .hero-grid > :first-child{
-    align-items: flex-start;     /* stop right alignment */
-    text-align: left;
-    justify-content: flex-end;   /* push content DOWN */
-    min-height: 70vh;            /* ensures bottom placement */
-    padding: 0 16px 20px;
-  }
-
-  /* Narrow text so it doesn't sit on faces */
+  /* ensure inner text doesn’t expand full width and drift left */
+  .hero-grid > :first-child .kicker,
+  .hero-grid > :first-child .h1,
   .hero-grid > :first-child .subhead,
   .hero-grid > :first-child .lead,
   .hero-grid > :first-child p{
-    max-width: 100%;
+    width: 100%;
+    margin-left: auto;
   }
 
-  /* Buttons row */
-  .cta-row{
-    justify-content: flex-start;
-    margin-top: 14px;
-  }
-
-  /* Pills sit directly under CTAs */
-  .trust-row{
-    margin-top: 12px;   /* FIX: removes large vertical gap */
-    padding-top: 6px;
-    justify-content: flex-start;
-  }
+  /* keep CTAs + pills anchored right */
+  .cta-row{ justify-content: flex-end !important; }
+  .trust-row{ justify-content: flex-end !important; }
 }
-/* ============================= */
-/* HERO — DESKTOP REFINEMENT */
-/* ============================= */
-@media (min-width: 1024px) {
 
+/* MOBILE: push text DOWN near bottom of image + reduce CTA/pill gaps */
+@media (max-width: 740px){
   .hero-grid > :first-child{
-    align-items: flex-end;
-    text-align: right;
-    padding-right: 32px;
-    min-height: 620px;
+    min-height: 560px !important;     /* creates “image height” for content to sit lower */
+    justify-content: flex-end !important;
+    align-items: flex-start !important; /* keeps it readable on mobile */
+    text-align: left !important;
+
+    padding-top: 0 !important;
+    padding-bottom: 22px !important;   /* breathing room from bottom edge */
   }
 
-  /* Keep text away from faces */
-  .hero-grid > :first-child .kicker,
-  .hero-grid > :first-child h1,
-  .hero-grid > :first-child .subhead{
-    max-width: 52ch;
-  }
-
-  /* Pills stay visually grounded */
+  /* remove the giant “auto” spacing that creates big gaps */
   .trust-row{
-    padding-top: 10px;
+    margin-top: 14px !important;       /* instead of pushing to bottom with auto */
+    padding-top: 0 !important;
   }
-}
-@media (max-width: 768px) {
-  .hero-bg{
-    background-position: center top;
-  }
+
+  /* slightly tighter vertical rhythm on mobile */
+  .cta-row{ margin-top: 12px !important; }
 }
