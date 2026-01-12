@@ -400,11 +400,3 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   .footer-row{ flex-direction:column; align-items:flex-start; }
   .notice{ top: 64px; }
 }
-/* Square edges ONLY for YouTube thumbnails */
-.video img {
-  border-radius: 0 !important;
-}
-.video {
-  border-radius: 12px;
-  overflow: hidden; /* keeps square image clean inside */
-}
