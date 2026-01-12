@@ -66,7 +66,8 @@ async function loadLatestVideos() {
       <div class="card" style="grid-column: 1 / -1;">
         <h3>Enable auto-thumbnails (optional)</h3>
         <p class="muted">
-          <code>youtubeApiKey</code> and <code>youtubeChannelId</code> in <code>app.js</code>.
+          To auto-load latest videos, add <code>youtubeApiKey</code> and <code>youtubeChannelId</code> in <code>app.js</code>.
+          Meanwhile, the playlist embed below works great.
         </p>
       </div>
     `;
