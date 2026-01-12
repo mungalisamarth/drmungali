@@ -400,3 +400,20 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   .footer-row{ flex-direction:column; align-items:flex-start; }
   .notice{ top: 64px; }
 }
+/* ===== Square-edge mode (override rounded corners) ===== */
+:root{
+  --radius-0: 0px;
+}
+
+/* global overrides */
+*{
+  border-radius: 0 !important;
+}
+
+/* (optional) keep brand mark slightly rounded? 
+   If you truly want EVERYTHING square, leave this commented out. */
+/*
+.brand-mark{
+  border-radius: 0 !important;
+}
+*/
