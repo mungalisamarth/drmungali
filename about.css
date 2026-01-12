@@ -102,22 +102,15 @@ section{
 /* HERO */
 .hero{
   position: relative;
-  margin-top: 14px;
+  overflow: hidden;
   border-radius: var(--radius);
-  overflow:hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(255,255,255,0.10);
-  min-height: 420px; /* keeps hero tall on mobile */
+  max-width: var(--max);
+  margin: 14px auto 0;
 }
-.heroMedia{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(180deg, rgba(7,7,8,0.15), rgba(7,7,8,0.70)),
-    url("assets/hero.jpg");
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.02);
+.about-hero__img, .hero img{
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .heroOverlay{
   position:absolute;
@@ -132,14 +125,12 @@ section{
   bottom: 0;
   z-index: 2;
   padding: 18px 18px 22px;
-  max-width: none;          /* REMOVE width constraint */
+  max-width: none;
+  margin: 0;              /* important: no margins */
+  box-sizing: border-box;
 }
-.heroCopy::before{
-  content: "";
-  position: absolute;
-  inset: 0;
+.heroCopy{
   background: rgba(0,0,0,0.55);
-  z-index: -1;
 }
 .kicker{
   margin: 0 0 10px;
@@ -148,13 +139,8 @@ section{
   letter-spacing: 0.9px;
   text-transform: uppercase;
 }
-.hero h1{
-  margin: 0 0 10px;
-  font-size: 36px;
-  line-height: 1.05;
-  letter-spacing: -0.6px;
-  max-width: none;          /* <-- KEY CHANGE */
-}
+.hero h1{ max-width: none; }
+.lede{ max-width: none; }
 .heroCopy > *{
   max-width: 1100px;
 }
