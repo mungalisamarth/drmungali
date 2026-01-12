@@ -450,3 +450,71 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   color: #f2a43a;
   font-weight: 600;
 }
+/* ============================= */
+/* HERO — MOBILE OVERRIDES */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* Collapse grid cleanly */
+  .hero-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* Text column behavior on mobile */
+  .hero-grid > :first-child{
+    align-items: flex-start;     /* stop right alignment */
+    text-align: left;
+    justify-content: flex-end;   /* push content DOWN */
+    min-height: 70vh;            /* ensures bottom placement */
+    padding: 0 16px 20px;
+  }
+
+  /* Narrow text so it doesn't sit on faces */
+  .hero-grid > :first-child .subhead,
+  .hero-grid > :first-child .lead,
+  .hero-grid > :first-child p{
+    max-width: 100%;
+  }
+
+  /* Buttons row */
+  .cta-row{
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
+  /* Pills sit directly under CTAs */
+  .trust-row{
+    margin-top: 12px;   /* FIX: removes large vertical gap */
+    padding-top: 6px;
+    justify-content: flex-start;
+  }
+}
+/* ============================= */
+/* HERO — DESKTOP REFINEMENT */
+/* ============================= */
+@media (min-width: 1024px) {
+
+  .hero-grid > :first-child{
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 32px;
+    min-height: 620px;
+  }
+
+  /* Keep text away from faces */
+  .hero-grid > :first-child .kicker,
+  .hero-grid > :first-child h1,
+  .hero-grid > :first-child .subhead{
+    max-width: 52ch;
+  }
+
+  /* Pills stay visually grounded */
+  .trust-row{
+    padding-top: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-bg{
+    background-position: center top;
+  }
+}
