@@ -10,16 +10,27 @@
 
 <body>
   <!-- Top bar -->
-  <header class="topbar">
-<a class="brand" href="index.html">
-   <span class="brand-mark" aria-hidden="true">
-    <img src="./assets/ram.png" alt="Ram" class="brand-icon" />
-  </span>
-  <span class="brand-text">Dr. Mungali Seva Foundation</span>
-</a>
+<header class="header">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">
+      <img src="./assets/ram.png" alt="Ram" class="brand-icon" />
+    </span>
+    <span class="brand-text">Dr. Mungali Seva Foundation</span>
+  </a>
 
-    <a class="navCta" href="index.html#donate">Donate</a>
-  </header>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="nav" id="nav">
+    <a href="about.html" class="active">About</a>
+    <a href="index.html#videos">Videos</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#support">Support</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="nav-cta" href="index.html#support">Donate</a>
+  </nav>
+</header>
 
   <main>
     <!-- HERO -->
@@ -97,5 +108,6 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script src="./app.js" defer></script>
 </body>
 </html>
