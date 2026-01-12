@@ -292,3 +292,7 @@ section{
   }
   .cardMedia{ height: 210px; }
 }
+.nav a.active {
+  color: #f2a43a;
+  font-weight: 600;
+}
