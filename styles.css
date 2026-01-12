@@ -411,58 +411,60 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   .support-grid{ grid-template-columns: 1fr; }
   .embed-wrap iframe{ height: 300px; }
   .notice{ top: 64px; }
-
 /* =========================================================
-   HERO UX OVERRIDES (paste at VERY END of styles.css)
+   HERO FIX: actually move text block to the RIGHT on desktop
+   and push it DOWN on mobile
+   (paste at END of styles.css)
    ========================================================= */
 
-/* DESKTOP/TABLET: move the whole left hero column to the RIGHT */
-@media (min-width: 741px){
-  .hero-grid > :first-child{
-    /* keep your existing flex behavior */
-    justify-content: flex-end !important;
-    align-items: flex-end !important;
-    text-align: right !important;
-
-    /* THIS is what actually pushes the block to the right side */
-    max-width: 640px;          /* tune: 560–720px based on taste */
-    margin-left: auto;         /* pushes it to the right within its grid track */
-    min-height: 560px;         /* keeps pills lower */
+/* DESKTOP/TABLET: swap grid columns so hero-copy is on the RIGHT */
+@media (min-width: 741px) {
+  .hero-grid {
+    display: grid; /* ensure it is a grid */
+    grid-template-columns: 0.95fr 1.05fr; /* left = panel, right = text */
+    align-items: stretch;
   }
 
-  /* ensure inner text doesn’t expand full width and drift left */
-  .hero-grid > :first-child .kicker,
-  .hero-grid > :first-child .h1,
-  .hero-grid > :first-child .subhead,
-  .hero-grid > :first-child .lead,
-  .hero-grid > :first-child p{
-    width: 100%;
-    margin-left: auto;
+  .hero-copy {
+    grid-column: 2;                 /* <-- key fix */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;      /* keep content lower */
+    align-items: flex-end;          /* right aligned */
+    text-align: right;
+    min-height: 560px;
   }
 
-  /* keep CTAs + pills anchored right */
-  .cta-row{ justify-content: flex-end !important; }
-  .trust-row{ justify-content: flex-end !important; }
+  .hero-panel {
+    grid-column: 1;                 /* panel on the left */
+  }
+
+  .cta-row,
+  .trust-row {
+    justify-content: flex-end;
+  }
 }
 
-/* MOBILE: push text DOWN near bottom of image + reduce CTA/pill gaps */
-@media (max-width: 740px){
-  .hero-grid > :first-child{
-    min-height: 560px !important;     /* creates “image height” for content to sit lower */
-    justify-content: flex-end !important;
-    align-items: flex-start !important; /* keeps it readable on mobile */
-    text-align: left !important;
-
-    padding-top: 0 !important;
-    padding-bottom: 22px !important;   /* breathing room from bottom edge */
+/* MOBILE: push the text block toward the bottom of the hero image */
+@media (max-width: 740px) {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;     /* stack */
   }
 
-  /* remove the giant “auto” spacing that creates big gaps */
-  .trust-row{
-    margin-top: 14px !important;       /* instead of pushing to bottom with auto */
-    padding-top: 0 !important;
+  /* keep text below the top faces: push it down */
+  .hero-copy {
+    min-height: 72vh;               /* creates room so content sits lower */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
   }
 
-  /* slightly tighter vertical rhythm on mobile */
-  .cta-row{ margin-top: 12px !important; }
+  /* tighten spacing between CTA row and pills */
+  .cta-row { margin-top: 12px; }
+  .trust-row { margin-top: 12px; padding-top: 0; gap: 10px; }
+}
+  @media (max-width: 740px){
+  .hero-bg{ background-position: 35% 0%; }
 }
