@@ -146,7 +146,7 @@ p{ line-height:1.7; margin:0.6rem 0; }
       rgba(11,11,12,0.36) 48%,
       rgba(11,11,12,0.58) 100%
     ),
-    url("./assets/DSC02891.jpeg");
+    url("./assets/hero-home.png");
   background-size: cover;
   background-position: center top;
   filter: saturate(1.08) contrast(1.05);
