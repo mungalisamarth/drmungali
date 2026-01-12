@@ -1,0 +1,294 @@
+:root{
+  --bg: #070708;
+  --panel: rgba(255,255,255,0.08);
+  --panel2: rgba(255,255,255,0.10);
+  --line: rgba(255,255,255,0.16);
+
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.72);
+
+  /* “Devotional” warmth (you can tune later) */
+  --saffron: #F2A43A;
+  --saffron2:#E58A16;
+
+  --radius: 18px;
+  --shadow: 0 14px 40px rgba(0,0,0,0.45);
+  --max: 980px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: radial-gradient(1000px 500px at 70% 0%, rgba(242,164,58,0.12), transparent 65%),
+              radial-gradient(900px 500px at 10% 10%, rgba(255,255,255,0.06), transparent 60%),
+              var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.25;
+}
+
+/* Topbar */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 12px 14px;
+  background: rgba(7,7,8,0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color: var(--text);
+}
+.brandMark{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(242,164,58,0.25), rgba(255,255,255,0.08));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+.brandText{
+  font-weight: 650;
+  letter-spacing: 0.2px;
+}
+.navCta{
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  text-decoration:none;
+  font-weight: 600;
+}
+
+/* Main container rhythm */
+main{
+  width: 100%;
+}
+section{
+  width: min(var(--max), calc(100% - 28px));
+  margin: 0 auto;
+}
+
+/* HERO */
+.hero{
+  position: relative;
+  margin-top: 14px;
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.10);
+  min-height: 420px; /* keeps hero tall on mobile */
+}
+.heroMedia{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(7,7,8,0.15), rgba(7,7,8,0.70)),
+    url("assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+}
+.heroOverlay{
+  position:absolute;
+  inset:0;
+  background: radial-gradient(800px 500px at 20% 20%, rgba(242,164,58,0.18), transparent 60%);
+  pointer-events:none;
+}
+.heroCopy{
+  position: relative;
+  z-index: 1;
+  padding: 22px 18px 20px;
+}
+.kicker{
+  margin: 0 0 10px;
+  color: rgba(255,255,255,0.80);
+  font-size: 13px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+}
+.hero h1{
+  margin: 0 0 10px;
+  font-size: 36px;
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+}
+.lede{
+  margin: 0;
+  max-width: 32ch;
+  color: rgba(255,255,255,0.82);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+/* QUOTE */
+.quoteBlock{
+  margin-top: 14px;
+  padding: 16px 16px 14px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.06));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.quote{
+  margin:0;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 650;
+}
+.attribution{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* PILLARS */
+.pillars{
+  margin-top: 14px;
+  display:grid;
+  gap: 10px;
+}
+.pill{
+  padding: 14px 14px 13px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.pill h2{
+  margin:0 0 6px;
+  font-size: 16px;
+}
+.pill p{
+  margin:0;
+  color: rgba(255,255,255,0.76);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* STORY CARDS */
+.storyCards{
+  margin-top: 14px;
+  display:grid;
+  gap: 12px;
+}
+.card{
+  border-radius: var(--radius);
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.06);
+}
+.cardMedia{
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) contrast(1.02);
+}
+.mediaMaharajji{
+  background-image:
+    linear-gradient(180deg, rgba(7,7,8,0.20), rgba(7,7,8,0.72)),
+    url("assets/maharajji.jpg");
+}
+.mediaSatsang{
+  background-image:
+    linear-gradient(180deg, rgba(7,7,8,0.20), rgba(7,7,8,0.72)),
+    url("assets/satsang.jpg");
+}
+.cardBody{
+  padding: 14px 14px 16px;
+}
+.cardBody h3{
+  margin:0 0 6px;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+}
+.cardBody p{
+  margin:0;
+  color: rgba(255,255,255,0.78);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+/* CTA STRIP */
+.ctaStrip{
+  margin-top: 14px;
+  margin-bottom: 18px;
+}
+.ctaInner{
+  padding: 16px;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(700px 260px at 0% 0%, rgba(242,164,58,0.28), transparent 55%),
+    linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.06));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.ctaInner h2{
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+.ctaInner p{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,0.80);
+  font-size: 14px;
+  line-height: 1.4;
+}
+.ctaRow{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 11px 14px;
+  border-radius: 999px;
+  text-decoration:none;
+  font-weight: 650;
+  border: 1px solid rgba(255,255,255,0.14);
+}
+.btn.primary{
+  background: linear-gradient(180deg, var(--saffron), var(--saffron2));
+  color: #1b1207;
+  border-color: rgba(0,0,0,0.18);
+}
+.btn.ghost{
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+}
+
+/* FOOTER */
+.footer{
+  width: min(var(--max), calc(100% - 28px));
+  margin: 0 auto 22px;
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+}
+
+/* Tablet+ */
+@media (min-width: 860px){
+  .hero{ min-height: 520px; }
+  .heroCopy{ padding: 34px 34px 26px; }
+  .hero h1{ font-size: 46px; }
+  .lede{ font-size: 16px; max-width: 42ch; }
+
+  .pillars{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .storyCards{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .cardMedia{ height: 210px; }
+}
