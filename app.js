@@ -102,7 +102,7 @@ async function loadLatestVideos() {
           <img src="${thumb}" alt="${escapeHtml(title)} thumbnail" />
           <div class="vbody">
             <p class="title">${escapeHtml(title)}</p>
-            <p class="meta">${date ? "Published " + date : "Watch on YouTube"}</p>
+            <p class="meta">Watch on YouTube</p>
           </div>
         </a>
       `;
