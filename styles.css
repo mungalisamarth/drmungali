@@ -578,3 +578,133 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
     transform: none;
   }
 }
+/* =========================
+   MOBILE MENU POLISH (override)
+   Paste at END of styles.css
+========================= */
+
+/* 1) Hide hamburger on desktop, always */
+@media (min-width: 741px){
+  .menu-btn{ display:none !important; }
+  .nav{ display:flex !important; position: static !important; background: transparent !important; border:0 !important; box-shadow:none !important; padding:0 !important; }
+}
+
+/* 2) Hamburger button: no outline box, standard 3 stacked lines */
+.menu-btn{
+  display:none;              /* default hidden; enabled in mobile MQ below */
+  width:44px; height:44px;
+  border:0;
+  background: transparent;
+  border-radius: 12px;
+  padding: 0;
+}
+.menu-btn:focus{ outline: none; }
+.menu-btn:focus-visible{
+  outline: 2px solid rgba(250,186,88,0.85);
+  outline-offset: 3px;
+}
+.menu-btn span{
+  display:block;
+  height:2px;
+  width:22px;
+  margin:5px auto;           /* ensures vertical stacking */
+  background: rgba(255,255,255,0.85);
+  border-radius: 2px;
+}
+
+/* 3) Mobile nav: closed by default, seamless dropdown (no big rounded box) */
+@media (max-width: 740px){
+  .menu-btn{ display:block; }
+
+  .nav{
+    display:none;             /* closed by default */
+    position: fixed;
+    top: 68px;                /* just under header */
+    left: 0;
+    right: 0;
+
+    padding: 14px 16px 16px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+
+    border: 0;                /* remove the outline box */
+    border-top: 1px solid rgba(255,255,255,0.10);
+    border-radius: 0;         /* seamless */
+    box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+
+    z-index: 999;
+    max-height: calc(100vh - 68px);
+    overflow: auto;
+
+    /* nice open/close feel */
+    opacity: 0;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+
+  .nav.open{
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav a{
+    padding: 12px 10px;
+    border-radius: 12px;
+    text-align: left;
+    color: rgba(255,255,255,0.90);
+  }
+
+  .nav a:hover{
+    background: rgba(255,255,255,0.06);
+  }
+
+  .nav .nav-cta{
+    margin-top: 8px;
+    text-align:center;
+  }
+}
+/* =========================
+   HERO MOBILE VERTICAL PLACEMENT FIX
+========================= */
+
+@media (max-width: 740px){
+
+  /* Make hero content occupy full height */
+  .hero .container.hero-grid{
+    min-height: 70vh;              /* gives vertical room */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;     /* PUSH CONTENT DOWN */
+    padding-bottom: 24px;          /* breathing room from bottom */
+  }
+
+  /* Hero text block */
+  .hero-copy{
+    text-align: left;              /* better readability on mobile */
+    max-width: 100%;
+  }
+
+  /* Reduce headline size slightly on mobile */
+  .hero-copy h1{
+    font-size: clamp(28px, 6vw, 36px);
+    line-height: 1.1;
+  }
+
+  /* Keep body text compact */
+  .hero-copy .subhead{
+    margin-top: 8px;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  /* Buttons sit closer together */
+  .cta-row{
+    margin-top: 14px;
+  }
+}
