@@ -90,19 +90,30 @@ p{ line-height:1.7; margin:0.6rem 0; }
   color: var(--text) !important;
 }
 
+/* MOBILE MENU BUTTON (hamburger) */
 .menu-btn{
-  display:none;
-  width:44px; height:40px;
-  border:1px solid rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.04);
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  flex-direction: column;      /* <-- critical: stack bars */
+  justify-content: center;
+  align-items: center;
+  gap: 6px;                    /* space between bars */
   border-radius: 12px;
-  cursor:pointer;
 }
+
 .menu-btn span{
-  display:block; height:2px; width:18px;
-  margin:4px auto;
-  background: rgba(255,255,255,0.8);
-  border-radius: 2px;
+  display: block;              /* <-- critical */
+  width: 22px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.88);
+  margin: 0;                   /* ensure no weird inline spacing */
+}
+
+/* (Optional) slightly thicker bars on high-res phones */
+@media (max-width: 520px){
+  .menu-btn span{ height: 2.5px; }
 }
 
 /* Announcement strip */
