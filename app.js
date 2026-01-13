@@ -212,3 +212,7 @@ function escapeHtml(str) {
 }
 
 loadLatestVideos();
+window.addEventListener("DOMContentLoaded", () => {
+  nav?.classList.remove("open");
+  menuBtn?.setAttribute("aria-expanded", "false");
+});
