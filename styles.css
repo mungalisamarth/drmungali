@@ -681,7 +681,7 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;     /* PUSH CONTENT DOWN */
-    padding-bottom: 24px;          /* breathing room from bottom */
+    padding-bottom: 14px;          /* breathing room from bottom */
   }
 
   /* Hero text block */
