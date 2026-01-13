@@ -393,78 +393,177 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
 }
 .footer-links{ display:flex; gap: 12px; color: var(--muted); }
 .footer-links a:hover{ color: var(--text); }
-
 /* Responsive */
 @media (max-width: 920px){
   .hero-grid{ grid-template-columns: 1fr; }
-  /* when stacked, don't force right alignment */
-  .hero-grid > :first-child{
+
+  /* stacked layout: normal left alignment */
+  .hero-copy{
     min-height: 0;
-    align-items:flex-start;
-    text-align:left;
+    align-items: flex-start;
+    text-align: left;
   }
+
   .cta-row{ justify-content:flex-start; }
-  .trust-row{ justify-content:flex-start; margin-top: 18px; padding-top: 0; }
+  .trust-row{ justify-content:flex-start; margin-top: 12px; padding-top: 0; gap: 10px; }
 
   .cards.three{ grid-template-columns: 1fr; }
   .video-grid{ grid-template-columns: 1fr 1fr; }
   .support-grid{ grid-template-columns: 1fr; }
   .embed-wrap iframe{ height: 300px; }
   .notice{ top: 64px; }
+
+  /* Mobile nav -> hamburger */
+  .menu-btn{ display: inline-flex; align-items:center; justify-content:center; }
+  .nav{
+    display: none;                 /* hidden until opened */
+    position: absolute;
+    left: 4vw;
+    right: 4vw;
+    top: 64px;                     /* below header */
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(11,11,12,0.92);
+    backdrop-filter: blur(10px);
+  }
+  .nav.open{ display: flex; }      /* content.js toggles this */
+  .nav a{ font-size: 1rem; }
+  .nav-cta{ width: 100%; text-align:center; }
+}
+
 /* =========================================================
-   HERO FIX: actually move text block to the RIGHT on desktop
-   and push it DOWN on mobile
-   (paste at END of styles.css)
+   HERO: Put text on RIGHT on desktop, push DOWN on mobile
    ========================================================= */
 
-/* DESKTOP/TABLET: swap grid columns so hero-copy is on the RIGHT */
-@media (min-width: 741px) {
-  .hero-grid {
-    display: grid; /* ensure it is a grid */
-    grid-template-columns: 0.95fr 1.05fr; /* left = panel, right = text */
+/* DESKTOP/TABLET: keep 2-col, but force hero-copy into RIGHT column */
+@media (min-width: 921px){
+  .hero-grid{
+    grid-template-columns: 0.95fr 1.05fr; /* left panel, right text */
     align-items: stretch;
   }
 
-  .hero-copy {
-    grid-column: 2;                 /* <-- key fix */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;      /* keep content lower */
-    align-items: flex-end;          /* right aligned */
-    text-align: right;
+  /* hero-copy is on the RIGHT */
+  .hero-copy{
+    grid-column: 2;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;   /* lower on the image */
+    align-items:flex-end;       /* right edge */
+    text-align:right;
     min-height: 560px;
   }
 
-  .hero-panel {
-    grid-column: 1;                 /* panel on the left */
+  /* panel on the LEFT */
+  .hero-panel{ grid-column: 1; }
+
+  /* keep text comfortably narrow */
+  .hero-copy .subhead,
+  .hero-copy .lead,
+  .hero-copy p{
+    max-width: 56ch;
   }
 
-  .cta-row,
-  .trust-row {
-    justify-content: flex-end;
+  .cta-row, .trust-row{ justify-content:flex-end; }
+}
+
+/* MOBILE: push hero text downward so it avoids faces */
+@media (max-width: 740px){
+  /* keep faces higher, text lower */
+  .hero-bg{ background-position: 40% 10%; }
+
+  .hero-copy{
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    min-height: 72vh;          /* creates “empty” space above text */
+    padding-bottom: 18px;
+  }
+
+  /* give the text a subtle bottom-readability layer (without boxing it) */
+  .hero .container{
+    position: relative;
+  }
+  .hero .container::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height: 42%;
+    background: linear-gradient(to top, rgba(11,11,12,0.72), rgba(11,11,12,0));
+    pointer-events:none;
+    z-index: 0;
+  }
+  .hero .container > *{ position: relative; z-index: 1; }
+
+  /* tighten pill rows */
+  .cta-row{ margin-top: 12px; }
+  .trust-row{ margin-top: 10px; gap: 10px; }
+}
+
+/* Extra small phones: push even lower */
+@media (max-width: 420px){
+  .hero-copy{ min-height: 78vh; }
+}
+/* =========================================
+   HERO: Elegant slide-in from LEFT
+   ========================================= */
+
+/* Base animation */
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-/* MOBILE: push the text block toward the bottom of the hero image */
-@media (max-width: 740px) {
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;     /* stack */
-  }
-
-  /* keep text below the top faces: push it down */
-  .hero-copy {
-    min-height: 72vh;               /* creates room so content sits lower */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: left;
-  }
-
-  /* tighten spacing between CTA row and pills */
-  .cta-row { margin-top: 12px; }
-  .trust-row { margin-top: 12px; padding-top: 0; gap: 10px; }
+/* Kicker (appears first) */
+.hero .kicker {
+  opacity: 0;
+  animation: heroSlideIn 700ms cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
 }
-  @media (max-width: 740px){
-  .hero-bg{ background-position: 35% 0%; }
+
+/* Main headline */
+.hero h1 {
+  opacity: 0;
+  animation: heroSlideIn 900ms cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards;
+  will-change: transform, opacity;
+}
+
+/* Supporting paragraph */
+.hero .subhead {
+  opacity: 0;
+  animation: heroSlideIn 900ms cubic-bezier(0.22, 1, 0.36, 1) 260ms forwards;
+}
+
+/* CTA buttons */
+.hero .cta-row {
+  opacity: 0;
+  animation: heroSlideIn 850ms cubic-bezier(0.22, 1, 0.36, 1) 420ms forwards;
+}
+
+/* Trust pills (last, subtle) */
+.hero .trust-row {
+  opacity: 0;
+  animation: heroSlideIn 850ms cubic-bezier(0.22, 1, 0.36, 1) 560ms forwards;
+}
+
+/* =========================================
+   Accessibility: respect reduced motion
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .hero .kicker,
+  .hero h1,
+  .hero .subhead,
+  .hero .cta-row,
+  .hero .trust-row {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }
