@@ -236,7 +236,18 @@ HTML structure expected:
   height: 170px;
   background-size: cover;
   background-position: center;
-  filter: saturate(1.05) contrast(1.02);
+  filter: saturate(1.05) contrast(1.02).cardMedia{
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+}
+
+.mediaMaharajji{
+  background-image: url("assets/maharajji.jpg");
+}
+
+.mediaSatsang{
+  background-image: url("assets/satsang.jpg");
 }
 
 .mediaMaharajji{
