@@ -1,17 +1,27 @@
 // ====== CONFIG ======
 const CONFIG = {
   youtubeChannelUrl: "https://www.youtube.com/@DivineNectar",
-  youtubeApiKey: "AIzaSyDYhvyCK-gdbSuM6J9fiauXPmyArzkXcCg", // optional
-  youtubeChannelId: "UCjIsdWpYGZspAlXMM_3lcLA", // required if using API
+
+  // IMPORTANT:
+  // Do NOT keep a YouTube API key in frontend JS anymore.
+  // The Cloudflare Worker holds it securely as a secret.
+  youtubeChannelId: "UCjIsdWpYGZspAlXMM_3lcLA",
   youtubeMaxResults: 6,
+
+  // Cloudflare Worker endpoint (production)
+  // Once your site is served from https://drmungali.org (Cloudflare Pages + custom domain),
+  // this relative path is best:
+  youtubeWorkerPath: "/api/youtube",
+
+  // Optional fallback (useful if you test the site from a different domain like GitHub Pages)
+  // Leave as empty string to disable fallback.
+  youtubeWorkerFallbackBase: "https://youtube-proxy.mungalisamarth.workers.dev",
 
   // Replace with your secure donation link (Razorpay/Instamojo/Donorbox/etc.)
   donationLink: "https://example.com/donate",
 
   // Replace with real UPI ID
   upiId: "yourupi@bank",
-
-  // Replace playlist ID in HTML too (or do it here if you prefer)
 };
 
 // ====== NAV (mobile) ======
@@ -23,7 +33,7 @@ menuBtn?.addEventListener("click", () => {
   menuBtn.setAttribute("aria-expanded", String(open));
 });
 
-nav?.querySelectorAll("a").forEach(a => {
+nav?.querySelectorAll("a").forEach((a) => {
   a.addEventListener("click", () => {
     nav.classList.remove("open");
     menuBtn.setAttribute("aria-expanded", "false");
@@ -37,7 +47,7 @@ document.getElementById("year").textContent = new Date().getFullYear().toString(
 const channelLink = document.getElementById("channelLink");
 const ytCta = document.getElementById("ytCta");
 const footerYt = document.getElementById("footerYt");
-[channelLink, ytCta, footerYt].forEach(el => el && (el.href = CONFIG.youtubeChannelUrl));
+[channelLink, ytCta, footerYt].forEach((el) => el && (el.href = CONFIG.youtubeChannelUrl));
 
 const donationLink = document.getElementById("donationLink");
 if (donationLink) donationLink.href = CONFIG.donationLink;
@@ -55,67 +65,141 @@ document.getElementById("copyUpiBtn")?.addEventListener("click", async () => {
   }
 });
 
-// ====== YouTube latest videos (optional API) ======
+// ====== YouTube latest videos (via Cloudflare Worker) ======
 async function loadLatestVideos() {
   const grid = document.getElementById("videoGrid");
   if (!grid) return;
 
-  // If no API config, show a gentle placeholder message
-  if (!CONFIG.youtubeApiKey || !CONFIG.youtubeChannelId) {
+  if (!CONFIG.youtubeChannelId) {
     grid.innerHTML = `
       <div class="card" style="grid-column: 1 / -1;">
-        <h3>Enable auto-thumbnails (optional)</h3>
-        <p class="muted">
-          To auto-load latest videos, add <code>youtubeApiKey</code> and <code>youtubeChannelId</code> in <code>app.js</code>.
-          Meanwhile, the playlist embed below works great.
-        </p>
+        <h3>Missing channel ID</h3>
+        <p class="muted">Add <code>youtubeChannelId</code> to <code>app.js</code>.</p>
       </div>
     `;
     return;
   }
 
-  const endpoint =
-    `https://www.googleapis.com/youtube/v3/search` +
-    `?key=${encodeURIComponent(CONFIG.youtubeApiKey)}` +
-    `&channelId=${encodeURIComponent(CONFIG.youtubeChannelId)}` +
-    `&part=snippet,id` +
-    `&order=date` +
-    `&maxResults=${CONFIG.youtubeMaxResults}` +
-    `&type=video`;
+  // Build Worker URL
+  const qs = new URLSearchParams({
+    channelId: CONFIG.youtubeChannelId,
+    maxResults: String(CONFIG.youtubeMaxResults),
+  });
 
+  // Prefer same-origin (best once site is on drmungali.org)
+  const primaryUrl = `${CONFIG.youtubeWorkerPath}?${qs.toString()}`;
+
+  // Optional fallback for testing from other domains
+  const fallbackUrl = CONFIG.youtubeWorkerFallbackBase
+    ? `${CONFIG.youtubeWorkerFallbackBase}${CONFIG.youtubeWorkerPath}?${qs.toString()}`
+    : "";
+
+  // Small helper: render error card
+  const renderError = (msg) => {
+    grid.innerHTML = `
+      <div class="card" style="grid-column: 1 / -1;">
+        <h3>Couldn’t load videos</h3>
+        <p class="muted">${escapeHtml(msg)}</p>
+        <p class="muted">The playlist embed below will still work.</p>
+      </div>
+    `;
+  };
+
+  // Try fetch with fallback
+  let data = null;
   try {
-    const res = await fetch(endpoint);
-    if (!res.ok) throw new Error("YouTube API request failed");
-    const data = await res.json();
+    data = await fetchJson(primaryUrl);
+  } catch (e1) {
+    if (fallbackUrl) {
+      try {
+        data = await fetchJson(fallbackUrl);
+      } catch (e2) {
+        renderError("The video feed is temporarily unavailable. Please try again later.");
+        return;
+      }
+    } else {
+      renderError("The video feed is temporarily unavailable. Please try again later.");
+      return;
+    }
+  }
 
-    const items = (data.items || []).filter(v => v.id && v.id.videoId);
+  // Normalize items across possible response shapes:
+  // A) YouTube Search API style: item.id.videoId + item.snippet.thumbnails...
+  // B) playlistItems style (uploads playlist): item.contentDetails.videoId + item.snippet...
+  const items = normalizeYouTubeItems(data);
 
-    grid.innerHTML = items.map(item => {
-      const vid = item.id.videoId;
-      const title = item.snippet.title || "Video";
-      const thumb = item.snippet.thumbnails?.high?.url || item.snippet.thumbnails?.medium?.url || "";
-      const date = item.snippet.publishedAt ? new Date(item.snippet.publishedAt).toLocaleDateString() : "";
-      const url = `https://www.youtube.com/watch?v=${vid}`;
+  if (!items.length) {
+    renderError("No videos found yet.");
+    return;
+  }
 
+  grid.innerHTML = items
+    .map(({ videoId, title, thumbnail, url }) => {
       return `
         <a class="video" href="${url}" target="_blank" rel="noopener">
-          <img src="${thumb}" alt="${escapeHtml(title)} thumbnail" />
+          <img src="${thumbnail}" alt="${escapeHtml(title)} thumbnail" />
           <div class="vbody">
             <p class="title">${escapeHtml(title)}</p>
             <p class="meta">Watch on YouTube</p>
           </div>
         </a>
       `;
-    }).join("");
+    })
+    .join("");
+}
 
-  } catch (e) {
-    grid.innerHTML = `
-      <div class="card" style="grid-column: 1 / -1;">
-        <h3>Couldn’t load videos</h3>
-        <p class="muted">Check your API key / channel ID, or rely on the playlist embed below.</p>
-      </div>
-    `;
+async function fetchJson(url) {
+  const res = await fetch(url, { method: "GET" });
+  const text = await res.text();
+  if (!res.ok) {
+    // Try to expose meaningful JSON errors if present (quota, forbidden, etc.)
+    try {
+      const j = JSON.parse(text);
+      throw new Error(j?.error?.message || "Request failed");
+    } catch {
+      throw new Error("Request failed");
+    }
   }
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error("Invalid JSON");
+  }
+}
+
+function normalizeYouTubeItems(data) {
+  const out = [];
+
+  const items = Array.isArray(data?.items) ? data.items : [];
+
+  for (const item of items) {
+    const videoId =
+      item?.id?.videoId ||
+      item?.contentDetails?.videoId ||
+      item?.snippet?.resourceId?.videoId ||
+      "";
+
+    if (!videoId) continue;
+
+    const title = item?.snippet?.title || "Video";
+
+    // Prefer thumbnails from API responses if present; else use i.ytimg.com pattern
+    const thumb =
+      item?.snippet?.thumbnails?.high?.url ||
+      item?.snippet?.thumbnails?.medium?.url ||
+      (videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : "");
+
+    const url = `https://www.youtube.com/watch?v=${videoId}`;
+
+    out.push({
+      videoId,
+      title,
+      thumbnail: thumb,
+      url,
+    });
+  }
+
+  return out;
 }
 
 function escapeHtml(str) {
