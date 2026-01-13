@@ -241,13 +241,13 @@ HTML structure expected:
 
 .mediaMaharajji{
   background-image:
-    linear-gradient(180deg, rgba(7,7,8,0.20), rgba(7,7,8,0.72)),
+ linear-gradient(180deg, rgba(7,7,8,0.20), rgba(7,7,8,0.22)),
     url("assets/maharajji.jpg");
 }
 
 .mediaSatsang{
   background-image:
-    linear-gradient(180deg, rgba(7,7,8,0.20), rgba(7,7,8,0.72)),
+    linear-gradient(180deg, rgba(7,7,8,0.20), rgba(7,7,8,0.22)),
     url("assets/satsang.jpg");
 }
 
