@@ -233,7 +233,7 @@ HTML structure expected:
 }
 
 .cardMedia{
-  height: 170px;
+  height: auto;
   background-size: cover;
   background-position: center;
   filter: saturate(1.05) contrast(1.02);
