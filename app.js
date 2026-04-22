@@ -21,7 +21,7 @@ const CONFIG = {
   donationLink: "https://example.com/donate",
 
   // Replace with real UPI ID
-  upiId: "yourupi@bank",
+ upiId: "MSDRMUNGALISEVAFOUNDATION.eazypay@icici",
 };
 
 // ====== NAV (mobile) ======
