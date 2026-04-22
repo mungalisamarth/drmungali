@@ -5,8 +5,9 @@
   --maroon: #972828;
   --maroon-2: #5F1515;
 
-  --ink: #0b0b0c;
-  --charcoal: #211F1E;
+  /* Updated site-wide base tones */
+  --ink: #17080c;
+  --charcoal: #2a1016;
 
   --text: rgba(255,255,255,0.92);
   --muted: rgba(255,255,255,0.72);
@@ -25,9 +26,9 @@ body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:
-    radial-gradient(1200px 800px at 20% 0%, rgba(255,255,255,0.06), transparent 55%),
-    radial-gradient(900px 700px at 80% 20%, rgba(255,255,255,0.05), transparent 60%),
-    var(--ink);
+    radial-gradient(1200px 700px at 12% 0%, rgba(151,40,40,0.30), transparent 55%),
+    radial-gradient(1000px 700px at 88% 12%, rgba(95,21,21,0.22), transparent 58%),
+    linear-gradient(180deg, #1a0a0f 0%, #12070a 100%);
   color:var(--text);
 }
 
@@ -53,7 +54,7 @@ p{ line-height:1.7; margin:0.6rem 0; }
 .header{
   position: sticky; top:0; z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(11,11,12,0.72);
+  background: rgba(28,10,14,0.78);
   border-bottom: 1px solid var(--line);
   display:flex; align-items:center; justify-content:space-between;
   padding: 14px 4vw;
@@ -69,7 +70,7 @@ p{ line-height:1.7; margin:0.6rem 0; }
   border-radius: 12px;
   background: rgba(255,255,255,0.04);
   flex-shrink: 0;
-  overflow: hidden; /* important */
+  overflow: hidden;
 }
 
 .brand-mark img.brand-icon{
@@ -95,23 +96,22 @@ p{ line-height:1.7; margin:0.6rem 0; }
   width: 44px;
   height: 44px;
   display: inline-flex;
-  flex-direction: column;      /* <-- critical: stack bars */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6px;                    /* space between bars */
+  gap: 6px;
   border-radius: 12px;
 }
 
 .menu-btn span{
-  display: block;              /* <-- critical */
+  display: block;
   width: 22px;
   height: 2px;
   border-radius: 999px;
   background: rgba(255,255,255,0.88);
-  margin: 0;                   /* ensure no weird inline spacing */
+  margin: 0;
 }
 
-/* (Optional) slightly thicker bars on high-res phones */
 @media (max-width: 520px){
   .menu-btn span{ height: 2.5px; }
 }
@@ -149,17 +149,14 @@ p{ line-height:1.7; margin:0.6rem 0; }
 .hero-bg{
   position:absolute; inset:0;
   background:
-    /* warm saffron tint */
     linear-gradient(0deg, rgba(250,186,88,0.10), rgba(250,186,88,0.10)),
-    /* softer readability gradient (less black) */
     linear-gradient(90deg,
-      rgba(11,11,12,0.58) 0%,
-      rgba(11,11,12,0.28) 48%,
-      rgba(11,11,12,0.58) 100%
+      rgba(30,10,12,0.65) 0%,
+      rgba(30,10,12,0.25) 45%,
+      rgba(30,10,12,0.65) 100%
     ),
     url("./assets/hero-home.png");
   background-size: cover;
-  /* key change: bias the photo left so right side stays cleaner for text */
   background-position: left top;
   filter: saturate(1.08) contrast(1.05);
   transform: scale(1.02);
@@ -174,30 +171,36 @@ p{ line-height:1.7; margin:0.6rem 0; }
   align-items: stretch;
 }
 
-/* ===== HERO: right-side text + pills near bottom (DESKTOP/TABLET) ===== */
-/* This targets your left column without requiring HTML changes */
+/* HERO: right-side text + pills near bottom */
 .hero-grid > :first-child{
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;   /* pushes content lower */
-  align-items:flex-end;        /* pushes content to the right */
+  justify-content:flex-end;
+  align-items:flex-end;
   text-align:right;
-  min-height: 560px;           /* creates room so pills can live at bottom */
+  min-height: 560px;
   padding-right: 4px;
 }
 
-/* keep text a bit narrower so it sits in the “empty” right area */
 .hero-grid > :first-child .subhead,
 .hero-grid > :first-child .lead,
 .hero-grid > :first-child p{
   max-width: 60ch;
 }
 
-/* right-align the buttons and pills */
-.cta-row{ display:flex; flex-wrap:wrap; gap: 12px; margin-top: 16px; justify-content:flex-end; }
+.cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content:flex-end;
+}
+
 .trust-row{
-  display:flex; flex-wrap:wrap; gap: 10px;
-  margin-top: auto;            /* pins pills toward the bottom of the hero column */
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  margin-top: auto;
   justify-content:flex-end;
   padding-top: 14px;
 }
@@ -242,7 +245,7 @@ p{ line-height:1.7; margin:0.6rem 0; }
 /* Hero right panel */
 .hero-panel{
   border: 1px solid rgba(255,255,255,0.16);
-  background: linear-gradient(135deg, rgba(0,0,0,0.34), rgba(0,0,0,0.10));
+  background: linear-gradient(135deg, rgba(34,12,18,0.44), rgba(20,8,10,0.18));
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow:hidden;
@@ -269,7 +272,7 @@ p{ line-height:1.7; margin:0.6rem 0; }
 .quote{ font-size: 1.02rem; color: rgba(255,255,255,0.88); }
 .quote-by{ margin-top: 10px; color: rgba(255,255,255,0.70); }
 
-/* Section bands (experiential feel) */
+/* Section bands */
 .section.band-saffron{
   background:
     radial-gradient(900px 700px at 20% 0%, rgba(255,255,255,0.20), transparent 55%),
@@ -291,8 +294,9 @@ p{ line-height:1.7; margin:0.6rem 0; }
     radial-gradient(900px 700px at 20% 0%, rgba(255,255,255,0.08), transparent 55%),
     linear-gradient(180deg, rgba(151,40,40,0.98), rgba(95,21,21,0.94));
 }
+
 .section.band-deep{
-  background: linear-gradient(180deg, rgba(11,11,12,1), rgba(33,31,30,1));
+  background: linear-gradient(180deg, rgba(23,8,12,0.98), rgba(42,16,22,0.96));
   border-top: 1px solid rgba(255,255,255,0.06);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -301,8 +305,8 @@ p{ line-height:1.7; margin:0.6rem 0; }
 .cards{ display:grid; gap: 14px; margin-top: 18px; }
 .cards.three{ grid-template-columns: repeat(3, 1fr); }
 .card{
-  border: 1px solid rgba(255,255,255,0.14);
-  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  background: linear-gradient(180deg, rgba(58,20,28,0.55), rgba(34,12,18,0.50));
   border-radius: var(--radius);
   padding: 18px;
 }
@@ -371,16 +375,30 @@ p{ line-height:1.7; margin:0.6rem 0; }
   margin-top: 16px;
 }
 .upi-row{
-  display:flex; gap: 10px; align-items:center; justify-content:space-between;
+  display:flex;
+  gap: 12px;
+  align-items:center;
+  justify-content:space-between;
   margin-top: 10px;
 }
-.qr-wrap{ margin-top: 14px; }
+.qr-wrap{
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+}
 .qr{
   width: 100%;
-  max-width: 260px;
-  border-radius: 14px;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
   border: 1px solid rgba(26,18,10,0.18);
   background: rgba(255,255,255,0.14);
+}
+.support-grid .card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Form */
@@ -397,18 +415,32 @@ input, textarea{
 }
 input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
 
+.form-embed {
+  margin-top: 24px;
+  padding: 12px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 16px;
+}
+.form-embed iframe {
+  border-radius: 12px;
+}
+
 /* Footer */
-.footer{ border-top:1px solid rgba(255,255,255,0.10); padding: 22px 0; background: rgba(255,255,255,0.02); }
+.footer{
+  border-top:1px solid rgba(255,255,255,0.10);
+  padding: 22px 0;
+  background: linear-gradient(180deg, rgba(23,8,12,0.98), rgba(18,7,10,1));
+}
 .footer-row{
   display:flex; justify-content:space-between; gap: 14px; align-items:center;
 }
 .footer-links{ display:flex; gap: 12px; color: var(--muted); }
 .footer-links a:hover{ color: var(--text); }
+
 /* Responsive */
 @media (max-width: 920px){
   .hero-grid{ grid-template-columns: 1fr; }
 
-  /* stacked layout: normal left alignment */
   .hero-copy{
     min-height: 0;
     align-items: flex-start;
@@ -424,53 +456,45 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   .embed-wrap iframe{ height: 300px; }
   .notice{ top: 64px; }
 
-  /* Mobile nav -> hamburger */
   .menu-btn{ display: inline-flex; align-items:center; justify-content:center; }
   .nav{
-    display: none;                 /* hidden until opened */
+    display: none;
     position: absolute;
     left: 4vw;
     right: 4vw;
-    top: 64px;                     /* below header */
+    top: 64px;
     flex-direction: column;
     gap: 12px;
     padding: 14px;
     border-radius: 16px;
     border: 1px solid rgba(255,255,255,0.14);
-    background: rgba(11,11,12,0.92);
+    background: rgba(28,10,14,0.92);
     backdrop-filter: blur(10px);
   }
-  .nav.open{ display: flex; }      /* content.js toggles this */
+  .nav.open{ display: flex; }
   .nav a{ font-size: 1rem; }
   .nav-cta{ width: 100%; text-align:center; }
 }
 
-/* =========================================================
-   HERO: Put text on RIGHT on desktop, push DOWN on mobile
-   ========================================================= */
-
-/* DESKTOP/TABLET: keep 2-col, but force hero-copy into RIGHT column */
+/* HERO desktop */
 @media (min-width: 921px){
   .hero-grid{
-    grid-template-columns: 0.95fr 1.05fr; /* left panel, right text */
+    grid-template-columns: 0.95fr 1.05fr;
     align-items: stretch;
   }
 
-  /* hero-copy is on the RIGHT */
   .hero-copy{
     grid-column: 2;
     display:flex;
     flex-direction:column;
-    justify-content:flex-end;   /* lower on the image */
-    align-items:flex-end;       /* right edge */
+    justify-content:flex-end;
+    align-items:flex-end;
     text-align:right;
     min-height: 560px;
   }
 
-  /* panel on the LEFT */
   .hero-panel{ grid-column: 1; }
 
-  /* keep text comfortably narrow */
   .hero-copy .subhead,
   .hero-copy .lead,
   .hero-copy p{
@@ -480,20 +504,18 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   .cta-row, .trust-row{ justify-content:flex-end; }
 }
 
-/* MOBILE: push hero text downward so it avoids faces */
+/* HERO mobile */
 @media (max-width: 740px){
-  /* keep faces higher, text lower */
   .hero-bg{ background-position: 40% 10%; }
 
   .hero-copy{
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
-    min-height: 72vh;          /* creates “empty” space above text */
+    min-height: 72vh;
     padding-bottom: 18px;
   }
 
-  /* give the text a subtle bottom-readability layer (without boxing it) */
   .hero .container{
     position: relative;
   }
@@ -508,20 +530,15 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   }
   .hero .container > *{ position: relative; z-index: 1; }
 
-  /* tighten pill rows */
   .cta-row{ margin-top: 12px; }
   .trust-row{ margin-top: 10px; gap: 10px; }
 }
 
-/* Extra small phones: push even lower */
 @media (max-width: 420px){
   .hero-copy{ min-height: 78vh; }
 }
-/* =========================================
-   HERO: Elegant slide-in from LEFT
-   ========================================= */
 
-/* Base animation */
+/* Hero text animation */
 @keyframes heroSlideIn {
   from {
     opacity: 0;
@@ -532,41 +549,27 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
     transform: translateX(0);
   }
 }
-
-/* Kicker (appears first) */
 .hero .kicker {
   opacity: 0;
   animation: heroSlideIn 700ms cubic-bezier(0.22, 1, 0.36, 1) 0ms forwards;
 }
-
-/* Main headline */
 .hero h1 {
   opacity: 0;
   animation: heroSlideIn 900ms cubic-bezier(0.22, 1, 0.36, 1) 120ms forwards;
   will-change: transform, opacity;
 }
-
-/* Supporting paragraph */
 .hero .subhead {
   opacity: 0;
   animation: heroSlideIn 900ms cubic-bezier(0.22, 1, 0.36, 1) 260ms forwards;
 }
-
-/* CTA buttons */
 .hero .cta-row {
   opacity: 0;
   animation: heroSlideIn 850ms cubic-bezier(0.22, 1, 0.36, 1) 420ms forwards;
 }
-
-/* Trust pills (last, subtle) */
 .hero .trust-row {
   opacity: 0;
   animation: heroSlideIn 850ms cubic-bezier(0.22, 1, 0.36, 1) 560ms forwards;
 }
-
-/* =========================================
-   Accessibility: respect reduced motion
-   ========================================= */
 @media (prefers-reduced-motion: reduce) {
   .hero .kicker,
   .hero h1,
@@ -578,20 +581,22 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
     transform: none;
   }
 }
-/* =========================
-   MOBILE MENU POLISH (override)
-   Paste at END of styles.css
-========================= */
 
-/* 1) Hide hamburger on desktop, always */
+/* Mobile menu polish */
 @media (min-width: 741px){
   .menu-btn{ display:none !important; }
-  .nav{ display:flex !important; position: static !important; background: transparent !important; border:0 !important; box-shadow:none !important; padding:0 !important; }
+  .nav{
+    display:flex !important;
+    position: static !important;
+    background: transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    padding:0 !important;
+  }
 }
 
-/* 2) Hamburger button: no outline box, standard 3 stacked lines */
 .menu-btn{
-  display:none;              /* default hidden; enabled in mobile MQ below */
+  display:none;
   width:44px; height:44px;
   border:0;
   background: transparent;
@@ -607,36 +612,30 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
   display:block;
   height:2px;
   width:22px;
-  margin:5px auto;           /* ensures vertical stacking */
+  margin:5px auto;
   background: rgba(255,255,255,0.85);
   border-radius: 2px;
 }
 
-/* 3) Mobile nav: closed by default, seamless dropdown (no big rounded box) */
 @media (max-width: 740px){
   .menu-btn{ display:block; }
 
   .nav{
-    display:none;             /* closed by default */
+    display:none;
     position: fixed;
-    top: 68px;                /* just under header */
+    top: 68px;
     left: 0;
     right: 0;
-
     padding: 14px 16px 16px;
     background: rgba(10,10,10,0.92);
     backdrop-filter: blur(12px);
-
-    border: 0;                /* remove the outline box */
+    border: 0;
     border-top: 1px solid rgba(255,255,255,0.10);
-    border-radius: 0;         /* seamless */
+    border-radius: 0;
     box-shadow: 0 18px 50px rgba(0,0,0,0.55);
-
     z-index: 999;
     max-height: calc(100vh - 68px);
     overflow: auto;
-
-    /* nice open/close feel */
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
@@ -647,7 +646,6 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
     display:flex;
     flex-direction: column;
     gap: 10px;
-
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
@@ -669,76 +667,38 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
     text-align:center;
   }
 }
-/* =========================
-   HERO MOBILE VERTICAL PLACEMENT FIX
-========================= */
 
 @media (max-width: 740px){
-
-  /* Make hero content occupy full height */
   .hero .container.hero-grid{
-    min-height: 70vh;              /* gives vertical room */
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;     /* PUSH CONTENT DOWN */
-    padding-bottom: 14px;          /* breathing room from bottom */
+    justify-content: flex-end;
+    padding-bottom: 14px;
   }
 
-  /* Hero text block */
   .hero-copy{
-    text-align: left;              /* better readability on mobile */
+    text-align: left;
     max-width: 100%;
   }
 
-  /* Reduce headline size slightly on mobile */
   .hero-copy h1{
     font-size: clamp(28px, 6vw, 36px);
     line-height: 1.1;
   }
 
-  /* Keep body text compact */
   .hero-copy .subhead{
     margin-top: 8px;
     font-size: 15px;
     line-height: 1.45;
   }
 
-  /* Buttons sit closer together */
   .cta-row{
     margin-top: 14px;
   }
 }
-.form-embed {
-  margin-top: 24px;
-  padding: 12px;
-  background: rgba(0,0,0,0.35);
-  border-radius: 16px;
-}
 
-.form-embed iframe {
-  border-radius: 12px;
-}
-.qr-wrap{
-  margin-top: 14px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.qr{
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-}
-
-.support-grid .card{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.upi-row{
-  align-items: center;
-  gap: 12px;
+.nav a.active {
+  color: #f2a43a;
+  font-weight: 600;
 }
