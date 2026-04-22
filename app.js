@@ -216,3 +216,26 @@ window.addEventListener("DOMContentLoaded", () => {
   nav?.classList.remove("open");
   menuBtn?.setAttribute("aria-expanded", "false");
 });
+
+// ====== Floating Support button — hide when #support is on screen ======
+(function setupFloatingSupport(){
+  const floater = document.getElementById("floatingSupport");
+  if (!floater) return;
+
+  const supportSection = document.getElementById("support");
+
+  // On inner pages there's no #support anchor — keep floater always visible.
+  if (!supportSection) return;
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          floater.classList.toggle("is-hidden", entry.isIntersecting);
+        });
+      },
+      { root: null, threshold: 0.15 }
+    );
+    io.observe(supportSection);
+  }
+})();

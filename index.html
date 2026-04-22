@@ -1,20 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
   <meta name="description" content="Supporting satsangs, retreats, seva, and the preservation of spiritual wisdom, so this work may continue and reach more hearts.">
   <meta property="og:title" content="Dr. Mungali Seva Foundation">
-<meta property="og:description" content="Supporting satsangs, retreats, seva, and the preservation of spiritual wisdom.">
-<meta property="og:image" content="https://drmungali.org/assets/og-cover.jpg">
-<meta property="og:type" content="website">
+  <meta property="og:description" content="Supporting satsangs, retreats, seva, and the preservation of spiritual wisdom.">
+  <meta property="og:image" content="https://drmungali.org/assets/og-cover.jpg">
+  <meta property="og:type" content="website">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dr. Mungali Seva Foundation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./styles.css" />
 </head>
@@ -22,12 +23,12 @@
 <body>
   <!-- Header -->
   <header class="header">
-<a class="brand" href="#home" aria-label="Go to home">
-  <span class="brand-mark" aria-hidden="true">
-    <img src="./assets/ram.png" alt="Ram" class="brand-icon" />
-  </span>
-  <span class="brand-text">Dr. Mungali Seva Foundation </span>
-</a>
+    <a class="brand" href="#home" aria-label="Go to home">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="./assets/ram.png" alt="Ram" class="brand-icon" />
+      </span>
+      <span class="brand-text">Dr. Mungali Seva Foundation </span>
+    </a>
 
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -42,15 +43,15 @@
     </nav>
   </header>
 
-  <!-- Announcement strip 
-  <div class="notice" id="noticeBar">
-    <div class="container notice-inner">
-      <span class="notice-tag">Upcoming</span>
-      <span class="notice-text" id="noticeText">Live online Satsang • 27 Feb 2026 • 6:00 PM IST • Join at Youtube/@DivineNectar</span>
-     <!-- <a class="notice-link" id="noticeLink" href="#contact">Get details →</a> -->
+  <!--
+    Announcement strip (disabled)
+    <div class="notice" id="noticeBar">
+      <div class="container notice-inner">
+        <span class="notice-tag">Upcoming</span>
+        <span class="notice-text" id="noticeText">Live online Satsang • 27 Feb 2026 • 6:00 PM IST • Join at Youtube/@DivineNectar</span>
+      </div>
     </div>
-  </div>
--->
+  -->
   <main>
     <!-- Hero -->
     <section id="home" class="section hero">
@@ -126,7 +127,7 @@
             <h2>Latest Videos</h2>
             <p class="muted">Follow the YouTube channel to view more videos and receive the prasad of Divine Nectar.</p>
           </div>
-        
+
         </div>
 
         <div class="video-grid" id="videoGrid" aria-live="polite"></div>
@@ -219,7 +220,7 @@
 <div>
             <hr class="container" />
 
-            <h4 class="mini">Where donations go</h4>
+            <h2>Where donations go</h2>
             <p class="lead">
               Seva activities, satsangs and retreats, projects that support growth and continuity, documentation and publishing, and the production efforts needed to share this work widely.
             </p>
@@ -253,6 +254,12 @@
       </div>
     </footer>
   </main>
+
+  <!-- Floating Support CTA (uses existing "Support the Mission" label; links to existing #support anchor) -->
+  <a class="floating-support" id="floatingSupport" href="#support" aria-label="Support the Mission">
+    <span class="heart" aria-hidden="true">❤</span>
+    <span>Support the Mission</span>
+  </a>
 
   <script src="./app.js"></script>
 </body>
