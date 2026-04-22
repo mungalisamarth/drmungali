@@ -718,3 +718,27 @@ input:focus, textarea:focus{ border-color: rgba(255,255,255,0.30); }
 .form-embed iframe {
   border-radius: 12px;
 }
+.qr-wrap{
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.qr{
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.support-grid .card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.upi-row{
+  align-items: center;
+  gap: 12px;
+}
