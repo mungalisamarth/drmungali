@@ -1,0 +1,35 @@
+# robots.txt for drmungali.org
+# Allow all reputable crawlers; expose the sitemap.
+
+User-agent: *
+Allow: /
+
+# Disallow nothing — site is fully public.
+# (If you ever stage drafts, place them under /drafts/ and add: Disallow: /drafts/ )
+
+# Allow major LLM and search crawlers explicitly so policy is documented
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://drmungali.org/sitemap.xml

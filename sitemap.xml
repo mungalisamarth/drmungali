@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://drmungali.org/</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://drmungali.org/assets/og-cover.jpg</image:loc>
+      <image:title>Dr. Mungali Seva Foundation</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://drmungali.org/about.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://drmungali.org/assets/DSC02891.jpeg</image:loc>
+      <image:title>Dr. Nirmal Chandra Mungali</image:title>
+      <image:caption>Dr. Nirmal Chandra Mungali — devotee of Neem Karoli Maharaj, physician, founder of the Dr. Mungali Seva Foundation</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://drmungali.org/projects.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://drmungali.org/assets/sanctuary.jpg</image:loc>
+      <image:title>Neem Karoli Baba Himalayan Sanctuary</image:title>
+      <image:caption>A contemplative spiritual sanctuary in the Kumaon Himalayas</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://drmungali.org/videos.html</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
