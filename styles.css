@@ -215,6 +215,13 @@ p{ line-height:1.7; margin:0.6rem 0; color: var(--body); }
   background: rgba(42,26,20,0.14);
 }
 .notice-link:hover{ background: rgba(42,26,20,0.22); }
+/* Make the whole notice inner clickable as an anchor */
+a.notice-inner{ text-decoration: none; color: inherit; }
+a.notice-inner:hover .notice-text{ text-decoration: underline; }
+.notice-arrow{ font-weight: 700; padding-left: 6px; }
+/* Fade transition for rolling announcements */
+.notice{ transition: opacity 220ms ease; }
+.notice.notice-fading{ opacity: 0; }
 
 /* ===== Hero ===== */
 .hero{

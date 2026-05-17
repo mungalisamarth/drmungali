@@ -150,15 +150,14 @@
     </nav>
   </header>
 
-  <!--
-    Announcement strip (disabled)
-    <div class="notice" id="noticeBar">
-      <div class="container notice-inner">
-        <span class="notice-tag">Upcoming</span>
-        <span class="notice-text" id="noticeText">Live online Satsang • 27 Feb 2026 • 6:00 PM IST • Join at Youtube/@DivineNectar</span>
-      </div>
-    </div>
-  -->
+  <!-- Announcement strip — message comes from ANNOUNCEMENT in app.js. To change the text or disable, edit app.js. -->
+  <div class="notice" id="noticeBar" hidden>
+    <a class="container notice-inner" id="noticeLink" href="#">
+      <span class="notice-tag" id="noticeTag">Upcoming</span>
+      <span class="notice-text" id="noticeText"></span>
+      <span class="notice-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
   <main>
     <!-- Hero -->
     <section id="home" class="section hero">

@@ -44,4 +44,16 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://drmungali.org/kutiya.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://drmungali.org/assets/kutiya.jpg</image:loc>
+      <image:title>Maharajji Ki Kutiya</image:title>
+      <image:caption>The sanctified room dedicated to Neem Karoli Baba at Dr. Mungali's residence</image:caption>
+    </image:image>
+  </url>
+
 </urlset>

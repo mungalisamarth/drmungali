@@ -24,6 +24,61 @@ const CONFIG = {
  upiId: "MSDRMUNGALISEVAFOUNDATION.eazypay@icici",
 };
 
+// ====== ANNOUNCEMENT BAR ======
+// Edit this object to change the message that appears across every page.
+// To disable the bar entirely: set `active: false`.
+// To show multiple rotating messages: add more entries to the `messages`
+//   array — they will auto-cycle every `rotateMs` milliseconds.
+const ANNOUNCEMENT = {
+  active: true,
+  rotateMs: 6000, // cycle interval when more than one message
+  messages: [
+    {
+      tag: "Upcoming",
+      text: "Join us on 7 June at 5:00 PM IST for the sacred opening of Maharajji Ki Kutiya",
+      link: "./kutiya.html",
+    },
+    // Add additional announcements here when needed, e.g.:
+    // { tag: "Live", text: "Satsang now live on YouTube", link: "https://www.youtube.com/@DivineNectar" },
+  ],
+};
+
+(function setupAnnouncementBar() {
+  const bar = document.getElementById("noticeBar");
+  if (!bar) return;
+  if (!ANNOUNCEMENT.active || !ANNOUNCEMENT.messages || !ANNOUNCEMENT.messages.length) {
+    bar.hidden = true;
+    return;
+  }
+  const tagEl  = document.getElementById("noticeTag");
+  const textEl = document.getElementById("noticeText");
+  const linkEl = document.getElementById("noticeLink");
+
+  function apply(msg) {
+    if (tagEl)  tagEl.textContent  = msg.tag  || "";
+    if (textEl) textEl.textContent = msg.text || "";
+    if (linkEl) linkEl.href        = msg.link || "#";
+  }
+
+  // Show first message immediately, then unhide the bar
+  apply(ANNOUNCEMENT.messages[0]);
+  bar.hidden = false;
+
+  // If more than one message, cycle them
+  if (ANNOUNCEMENT.messages.length > 1) {
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % ANNOUNCEMENT.messages.length;
+      // Fade-out, swap, fade-in for a gentler transition
+      bar.classList.add("notice-fading");
+      setTimeout(() => {
+        apply(ANNOUNCEMENT.messages[i]);
+        bar.classList.remove("notice-fading");
+      }, 250);
+    }, Math.max(2500, ANNOUNCEMENT.rotateMs));
+  }
+})();
+
 // ====== NAV (mobile) ======
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
