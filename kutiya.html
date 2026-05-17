@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Sacred Opening of Maharajji Ki Kutiya — 7 June 2026 | Dr. Mungali Seva Foundation</title>
-  <meta name="description" content="With Maharajji's grace, you are invited to the sacred opening of Maharajji Ki Kutiya on Sunday, 7 June 2026 at 5:00 PM IST in Haldwani, Uttarakhand. Join in person, or live online through the Divine Nectar YouTube channel." />
+  <title>Sacred Opening of Maharajji Ki Kutiya — 7 June 2026, Live Online | Dr. Mungali Seva Foundation</title>
+  <meta name="description" content="Join Dr. Mungali and devotees online for the sacred opening of Maharajji Ki Kutiya on Sunday, 7 June 2026 at 5:00 PM IST — live on the Divine Nectar YouTube channel." />
   <meta name="author" content="Dr. Mungali Seva Foundation" />
-  <meta name="keywords" content="Maharajji Ki Kutiya, Neem Karoli Baba, Maharajji, Dr. Mungali, Haldwani, Bhawani Ganj, Uttarakhand, satsang, Hanuman Chalisa, 7 June 2026, livestream" />
+  <meta name="keywords" content="Maharajji Ki Kutiya, Neem Karoli Baba, Maharajji, Dr. Mungali, Divine Nectar, satsang, Hanuman Chalisa, online satsang, livestream, 7 June 2026" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#5F1515" />
 
@@ -23,16 +23,16 @@
   <meta property="og:site_name" content="Dr. Mungali Seva Foundation" />
   <meta property="og:locale" content="en_IN" />
   <meta property="og:type" content="event" />
-  <meta property="og:title" content="Sacred Opening of Maharajji Ki Kutiya — 7 June 2026, 5:00 PM IST" />
-  <meta property="og:description" content="With Maharajji's grace, you are invited to a sacred evening of satsang, Hanuman Chalisa, and devotion." />
+  <meta property="og:title" content="Sacred Opening of Maharajji Ki Kutiya — Live Online, 7 June 2026, 5:00 PM IST" />
+  <meta property="og:description" content="An evening of satsang, Hanuman Chalisa, and devotion — live online from Maharajji Ki Kutiya on the Divine Nectar YouTube channel." />
   <meta property="og:image" content="https://drmungali.org/assets/kutiya.jpg" />
-  <meta property="og:image:alt" content="Maharajji Ki Kutiya — Maharajji's takht with tartan blanket inside Dr. Mungali's residence" />
+  <meta property="og:image:alt" content="Maharajji Ki Kutiya — a sanctified room with Maharajji's blanket and presence" />
   <meta property="og:url" content="https://drmungali.org/kutiya.html" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sacred Opening of Maharajji Ki Kutiya — 7 June 2026" />
-  <meta name="twitter:description" content="Join in person in Haldwani, Uttarakhand or live online via Divine Nectar on YouTube." />
+  <meta name="twitter:title" content="Sacred Opening of Maharajji Ki Kutiya — Live Online, 7 June 2026" />
+  <meta name="twitter:description" content="Live online via the Divine Nectar YouTube channel. An evening of satsang, Hanuman Chalisa, and devotion." />
   <meta name="twitter:image" content="https://drmungali.org/assets/kutiya.jpg" />
 
   <!-- Sitemap -->
@@ -49,12 +49,27 @@
     /* Page-specific styling for the Kutiya event */
     .kutiya-hero{
       position: relative;
-      min-height: 70vh;
+      min-height: 72vh;
       display: flex;
       align-items: flex-end;
       color: #FAF6EE;
-      background: #2A1A14 url("./assets/kutiya.jpg") center/cover no-repeat;
+      /* background-position favours top-left so Dr. Mungali's circle, the window
+         with Maharajji's photo, and the bed with the blanket all stay visible
+         when the box gets cropped for wider/shorter screens */
+      background: #2A1A14 url("./assets/kutiya.jpg") 30% 22% / cover no-repeat;
       overflow: hidden;
+    }
+    @media (max-width: 860px){
+      .kutiya-hero{
+        min-height: 68vh;
+        background-position: 18% 35%;
+      }
+    }
+    @media (max-width: 520px){
+      .kutiya-hero{
+        min-height: 62vh;
+        background-position: 14% 38%;
+      }
     }
     .kutiya-hero::before{
       content: "";
@@ -242,10 +257,10 @@
     <!-- HERO -->
     <section class="kutiya-hero">
       <div class="container">
-        <p class="kicker">With Maharajji's grace — you are invited</p>
+        <p class="kicker">With Maharajji's grace — join us online</p>
         <h1>The Sacred Opening of Maharajji Ki Kutiya</h1>
         <p class="lede">
-          A sanctified room — Maharajji's takht, his blanket, his presence. We open the space to devotees with an evening of satsang, Hanuman Chalisa, and devotion. Join in person in Haldwani, or live online from anywhere in the world.
+          A sanctified room kept in Maharajji's blanket and his enduring presence. Join us live online for an evening of satsang, Hanuman Chalisa, and devotion — from anywhere in the world.
         </p>
       </div>
     </section>
@@ -263,8 +278,8 @@
             <div class="value">5:00 PM IST</div>
           </div>
           <div class="pill">
-            <div class="label">Venue</div>
-            <div class="value">Dr. Mungali Residence,<br>Bhawani Ganj, Haldwani,<br>Uttarakhand</div>
+            <div class="label">Live on</div>
+            <div class="value"><a href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener" style="color:inherit;">Divine Nectar<br>on YouTube</a></div>
           </div>
         </div>
       </div>
@@ -402,34 +417,21 @@
     <span>Support the Mission</span>
   </a>
 
-  <!-- Structured data: Event -->
+  <!-- Structured data: Online Event -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Sacred Opening of Maharajji Ki Kutiya",
-    "description": "An evening of satsang, Hanuman Chalisa, and devotion at the opening of Maharajji Ki Kutiya — a sanctified room dedicated to Neem Karoli Baba (Maharajji) at Dr. Mungali's residence in Haldwani.",
+    "description": "An evening of satsang, Hanuman Chalisa, and devotion at the opening of Maharajji Ki Kutiya — a sanctified room dedicated to Neem Karoli Baba (Maharajji). Streamed live online via the Divine Nectar YouTube channel.",
     "startDate": "2026-06-07T17:00:00+05:30",
     "endDate": "2026-06-07T20:30:00+05:30",
     "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
-    "location": [
-      {
-        "@type": "Place",
-        "name": "Dr. Mungali Residence",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Bhawani Ganj",
-          "addressLocality": "Haldwani",
-          "addressRegion": "Uttarakhand",
-          "addressCountry": "IN"
-        }
-      },
-      {
-        "@type": "VirtualLocation",
-        "url": "https://youtube.com/live/eZod6467xCU"
-      }
-    ],
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://youtube.com/live/eZod6467xCU"
+    },
     "image": "https://drmungali.org/assets/kutiya.jpg",
     "organizer": {
       "@type": "NGO",
