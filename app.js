@@ -35,8 +35,8 @@ const ANNOUNCEMENT = {
   messages: [
     {
       tag: "Upcoming",
-      text: "Join us on 7 June at 5:00 PM IST for the sacred opening of Maharajji Ki Kutiya",
-      link: "./kutiya.html",
+      text: "Join us on 7 June at 5:00 PM IST for the sacred opening of Neem Karoli Maharaj Kutir",
+      link: "./neem-karoli-maharaj-kutir.html",
     },
     // Add additional announcements here when needed, e.g.:
     // { tag: "Live", text: "Satsang now live on YouTube", link: "https://www.youtube.com/@DivineNectar" },
