@@ -198,6 +198,38 @@
     }
     .program__cta{ margin-top: 12px; }
 
+    /* Buttons inside program cards need explicit colour — the global .btn.ghost
+       is styled for the dark hero, so we re-style ghost buttons on cream here. */
+    .program__cta .btn{
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.98rem;
+      line-height: 1.2;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .program__cta .btn.primary{
+      background: linear-gradient(180deg, var(--saffron), var(--saffron-2));
+      color: var(--ink);
+      border: 1px solid rgba(42,26,20,0.18);
+      box-shadow: 0 4px 12px rgba(201,146,42,0.28);
+    }
+    .program__cta .btn.primary:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(185,124,26,0.38);
+    }
+    .program__cta .btn.ghost{
+      background: #fff;
+      color: var(--maroon-ink);
+      border: 1px solid var(--line-strong);
+    }
+    .program__cta .btn.ghost:hover{
+      background: var(--cream-2);
+      border-color: var(--maroon-ink);
+    }
+
     /* Visit form section */
     .visit-form{
       margin-top: 18px;
@@ -348,7 +380,7 @@
     <section class="section">
       <div class="container">
         <h2>Inside the Kutir</h2>
-        <p class="muted">A few images from the Kutir — Maharajji's blanket, the portrait, and the quiet rhythm of the room.</p>
+        <p class="muted">A few images from the Kutir — Maharajji's blanket, the murti, and the quiet rhythm of the room.</p>
 
         <div class="gallery-grid" aria-label="Photo gallery of Neem Karoli Maharaj Kutir">
           <figure><img src="./assets/kutir-1.jpg" alt="Neem Karoli Maharaj Kutir — interior view 1" loading="lazy" /></figure>
@@ -387,10 +419,10 @@
             <span class="program__when">Every Wednesday</span>
             <h3 class="program__title">Divine Nectar Seekers' Questions</h3>
             <p class="program__desc">
-              An open Q&amp;A from the Kutir — Dr. Mungali answers questions from devotees on devotion, dharma, daily practice, and life in Maharajji's grace. Submit your question through the Divine Nectar channel.
+              An open Q&amp;A from the Kutir — Dr. Mungali answers questions from devotees on devotion, dharma, daily practice, and life in Maharajji's grace. Reserved for <strong>Divine Nectar Seekers</strong>, the paid membership tier on our YouTube channel.
             </p>
             <p class="program__cta">
-              <a class="btn ghost" href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener">Submit a question</a>
+              <a class="btn primary" href="https://www.youtube.com/@DivineNectar/join" target="_blank" rel="noopener">Join Divine Nectar Seekers</a>
             </p>
           </article>
 
@@ -456,7 +488,7 @@
         <div class="mailing-list">
           <h3>Dr. Mungali Seva Foundation — Mailing List</h3>
           <p>Add your name and email below to receive future announcements.</p>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeqEEld_he5WnO54mSet70uireAto5n2QkFGYVX1v9XbRaD_g/viewform?embedded=true" width="640" height="842" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
           <!--
             ▼▼▼  MAILING LIST FORM  ▼▼▼
 
@@ -482,7 +514,7 @@
             6. Click "Send" → "<>" (embed) tab → copy the <iframe ...> code.
             7. Paste that <iframe> here in place of the .mailing-placeholder div below.
           -->
-<!--
+
           <div class="mailing-placeholder">
             <strong>Embed your Google Form here.</strong>
             See the comment above this block in <code>neem-karoli-maharaj-kutir.html</code>
