@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Neem Karoli Maharaj Kutir — Sacred Opening, 7 June 2026, Live Online | Dr. Mungali Seva Foundation</title>
-  <meta name="description" content="Join Dr. Mungali and devotees online for the sacred opening of Neem Karoli Maharaj Kutir on Sunday, 7 June 2026 at 5:00 PM IST — live on the Divine Nectar YouTube channel." />
+  <title>Neem Karoli Maharaj Kutir — Live Satsang, SundarKand & Visit by Appointment | Dr. Mungali Seva Foundation</title>
+  <meta name="description" content="Neem Karoli Maharaj Kutir is a sanctified room held in Maharajji's blanket and enduring presence. Join live SundarKand and Hanuman Chalisa every Sunday, Divine Nectar Q&amp;A on Wednesdays, satsangs with Dr. Mungali, or visit the Kutir by appointment." />
   <meta name="author" content="Dr. Mungali Seva Foundation" />
-  <meta name="keywords" content="Neem Karoli Maharaj Kutir, Neem Karoli Baba, Neem Karoli Maharaj, Maharajji, Neem Karoli Baba ashram, Neem Karoli temple, Maharajji satsang, Dr. Mungali, Divine Nectar, Hanuman Chalisa, online satsang, livestream, 7 June 2026" />
+  <meta name="keywords" content="Neem Karoli Maharaj Kutir, Neem Karoli Baba Kutir, Maharajji Kutir, Neem Karoli Baba, Neem Karoli Maharaj, Maharajji, Neem Karoli Baba ashram, Neem Karoli Maharaj ashram, Maharajji satsang, Sundar Kand live, Hanuman Chalisa live, Dr. Mungali, Divine Nectar, visit Neem Karoli Baba, Neeb Karori Baba" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#5F1515" />
 
@@ -22,17 +22,17 @@
   <!-- Open Graph -->
   <meta property="og:site_name" content="Dr. Mungali Seva Foundation" />
   <meta property="og:locale" content="en_IN" />
-  <meta property="og:type" content="event" />
-  <meta property="og:title" content="Sacred Opening of Neem Karoli Maharaj Kutir — Live Online, 7 June 2026, 5:00 PM IST" />
-  <meta property="og:description" content="An evening of satsang, Hanuman Chalisa, and devotion — live online from Neem Karoli Maharaj Kutir on the Divine Nectar YouTube channel." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Neem Karoli Maharaj Kutir — A Sanctified Room in Maharajji's Presence" />
+  <meta property="og:description" content="Live SundarKand &amp; Hanuman Chalisa every Sunday at 9 AM IST, Divine Nectar Q&amp;A on Wednesdays, routine satsangs with Dr. Mungali, and visits by prior appointment." />
   <meta property="og:image" content="https://drmungali.org/assets/kutiya.jpg" />
   <meta property="og:image:alt" content="Neem Karoli Maharaj Kutir — a sanctified room with Maharajji's blanket and his enduring presence" />
   <meta property="og:url" content="https://drmungali.org/neem-karoli-maharaj-kutir.html" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sacred Opening of Neem Karoli Maharaj Kutir — Live Online, 7 June 2026" />
-  <meta name="twitter:description" content="Live online via the Divine Nectar YouTube channel. An evening of satsang, Hanuman Chalisa, and devotion at Neem Karoli Maharaj Kutir." />
+  <meta name="twitter:title" content="Neem Karoli Maharaj Kutir — Live Satsang, SundarKand & Visits" />
+  <meta name="twitter:description" content="A sanctified room kept in Maharajji's blanket and his enduring presence. Live programs every Sunday and Wednesday." />
   <meta name="twitter:image" content="https://drmungali.org/assets/kutiya.jpg" />
 
   <!-- Sitemap -->
@@ -46,30 +46,21 @@
   <link rel="stylesheet" href="./styles.css" />
 
   <style>
-    /* Page-specific styling for the Neem Karoli Maharaj Kutir event */
+    /* Hero */
     .kutir-hero{
       position: relative;
-      min-height: 72vh;
+      min-height: 64vh;
       display: flex;
       align-items: flex-end;
       color: #FAF6EE;
-      /* background-position favours top-left so Dr. Mungali's circle, the window
-         with Maharajji's photo, and the bed with the blanket all stay visible
-         when the box gets cropped for wider/shorter screens */
       background: #2A1A14 url("./assets/kutiya.jpg") 30% 22% / cover no-repeat;
       overflow: hidden;
     }
     @media (max-width: 860px){
-      .kutir-hero{
-        min-height: 68vh;
-        background-position: 18% 35%;
-      }
+      .kutir-hero{ min-height: 58vh; background-position: 18% 35%; }
     }
     @media (max-width: 520px){
-      .kutir-hero{
-        min-height: 62vh;
-        background-position: 14% 38%;
-      }
+      .kutir-hero{ min-height: 56vh; background-position: 14% 38%; }
     }
     .kutir-hero::before{
       content: "";
@@ -90,145 +81,166 @@
     .kutir-hero h1{
       font-family: "Cormorant Garamond", serif;
       font-weight: 600;
-      font-size: clamp(34px, 5.4vw, 64px);
+      font-size: clamp(34px, 5.4vw, 60px);
       line-height: 1.05;
       margin: 0 0 18px;
       max-width: 22ch;
-      /* Force white so the global h1 maroon doesn't bleed through */
       color: #FAF6EE !important;
-      /* Soft shadow so the title stays legible whatever the background crop shows */
       text-shadow: 0 2px 18px rgba(42,26,20,0.55);
     }
     .kutir-hero .lede{
       font-size: 18px;
       line-height: 1.55;
-      max-width: 56ch;
+      max-width: 60ch;
       color: rgba(255,250,238,0.92);
     }
 
-    /* Event meta card */
-    .event-meta{
+    /* Section rhythm: tighter than default so the page reads as one place */
+    main .section{ padding-top: 36px; padding-bottom: 36px; }
+    @media (max-width: 860px){
+      main .section{ padding-top: 22px; padding-bottom: 22px; }
+    }
+    main > section.section:first-of-type{ padding-top: 44px; }
+
+    /* Intro band */
+    .kutir-intro{
+      background:
+        radial-gradient(700px 260px at 0% 0%, rgba(232,184,75,0.18), transparent 55%),
+        linear-gradient(180deg, var(--cream-2), #fff);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .kutir-intro h2{ margin-top: 0; }
+    .kutir-intro p{ font-size: 17px; line-height: 1.7; max-width: 68ch; }
+
+    /* Photo gallery — square crops */
+    .gallery-grid{
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      background: var(--cream-warm, #F1E5C4);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .gallery-grid figure{
+      margin: 0;
       border-radius: 14px;
-      padding: 28px 32px;
-      margin: -40px auto 0;
-      position: relative;
-      z-index: 2;
-      max-width: 980px;
-      box-shadow: 0 12px 36px rgba(42,26,20,0.18);
-    }
-    .event-meta .pill{ text-align: center; }
-    .event-meta .label{
-      font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
-      color: #5F1515; font-weight: 600; margin-bottom: 6px;
-    }
-    .event-meta .value{
-      font-family: "Cormorant Garamond", serif;
-      font-size: 22px; font-weight: 600; color: #2A1A14;
-      line-height: 1.25;
-    }
-    @media (max-width: 720px){
-      .event-meta{ grid-template-columns: 1fr; gap: 16px; padding: 22px; }
-    }
-
-    /* Tighten the default .section padding for this page so the page feels
-       compact, not airy. */
-    main .section{ padding-top: 32px; padding-bottom: 32px; }
-    @media (max-width: 860px){
-      main .section{ padding-top: 18px; padding-bottom: 18px; }
-    }
-    /* The first section under the hero only needs bottom padding because
-       the event-meta card already overlaps upward by -40px */
-    main > section.section:first-of-type{ padding-top: 0; padding-bottom: 24px; }
-    @media (max-width: 860px){
-      main > section.section:first-of-type{ padding-bottom: 12px; }
-    }
-    /* The About-Foundation band at the bottom needs slightly more breathing room */
-    section.section.band-deep{ padding-top: 44px; padding-bottom: 44px; }
-
-    /* Schedule + Join card grid */
-    .kutir-grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 24px;
-    }
-    @media (max-width: 860px){
-      .kutir-grid{ grid-template-columns: 1fr; gap: 18px; margin-top: 16px; }
-    }
-    .schedule-list{
-      list-style: none;
-      padding: 0;
-      margin: 18px 0 0;
-    }
-    .schedule-list li{
-      display: grid;
-      grid-template-columns: 110px 1fr;
-      gap: 14px;
-      padding: 10px 0;
-      border-bottom: 1px dashed rgba(42,26,20,0.14);
-      align-items: baseline;
-    }
-    .schedule-list li:last-child{ border-bottom: none; }
-    .schedule-list .time{
-      font-weight: 700;
-      color: #5F1515;
-      font-feature-settings: "tnum";
-    }
-    .schedule-list .what{ color: #2A1A14; }
-
-    /* Livestream embed */
-    .livestream{
-      margin-top: 0;
-      background: var(--cream-warm, #F1E5C4);
-      border-radius: 14px;
-      padding: 28px;
-    }
-    @media (max-width: 720px){
-      .livestream{ padding: 20px; }
-    }
-    .livestream h2{ margin-top: 0; }
-    .livestream .ratio{
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      border-radius: 10px;
       overflow: hidden;
-      background: #000;
-      margin-top: 18px;
+      box-shadow: 0 8px 22px rgba(42,26,20,0.10);
+      border: 1px solid var(--line);
+      background: var(--cream-3);
+      aspect-ratio: 1 / 1;
     }
-    .livestream .ratio iframe{
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      border: 0;
+    .gallery-grid img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (min-width: 720px){
+      .gallery-grid{ grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    }
+    @media (min-width: 1000px){
+      .gallery-grid{ grid-template-columns: repeat(4, 1fr); }
     }
 
-    /* Register section */
-    .register{ margin-top: 0; }
-    .register h2{ margin-top: 0; }
-    .register .why{
-      max-width: 720px;
-      color: var(--ink, #2A1A14);
-      font-size: 17px;
-      line-height: 1.6;
-      margin-top: 6px;
+    /* Schedule cards */
+    .schedule-section h2{ margin-top: 0; }
+    .schedule-grid{
+      margin-top: 18px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
     }
-    .register iframe{
+    @media (min-width: 860px){
+      .schedule-grid{ grid-template-columns: 1fr 1fr; gap: 20px; }
+    }
+    .program{
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 22px 20px;
+      box-shadow: 0 6px 18px rgba(42,26,20,0.06);
+      position: relative;
+    }
+    .program::before{
+      content:"";
+      position: absolute; left: 0; right: 0; top: 0;
+      height: 3px;
+      border-radius: 16px 16px 0 0;
+      background: linear-gradient(90deg, rgba(232,184,75,0.85), rgba(185,124,26,0.85));
+    }
+    .program__when{
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #5F1515;
+      background: rgba(232,184,75,0.22);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .program__title{
+      margin: 0 0 8px;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--maroon-ink);
+      font-size: 1.45rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .program__desc{ color: var(--body); font-size: 1rem; line-height: 1.6; margin: 0; }
+    .program__note{
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(42,26,20,0.14);
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .program__cta{ margin-top: 12px; }
+
+    /* Visit form section */
+    .visit-form{
+      margin-top: 18px;
+      background: var(--cream-2);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--line);
+    }
+    .visit-form h3{ margin-top: 0; }
+    .visit-form iframe{
       display: block;
       width: 100%;
       max-width: 720px;
       min-height: 720px;
-      margin-top: 18px;
+      margin-top: 14px;
       border: 0;
       background: transparent;
     }
-    .register-placeholder{
-      max-width: 720px;
-      padding: 24px;
+
+    /* Mailing list panel */
+    .mailing-list{
       margin-top: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid #C9922A;
+      border-radius: 12px;
+      padding: 22px 24px;
+    }
+    .mailing-list h3{ margin: 0 0 8px; }
+    .mailing-list p{ margin: 0 0 12px; color: var(--body); }
+    .mailing-list iframe{
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      min-height: 560px;
+      margin-top: 12px;
+      border: 0;
+      background: transparent;
+    }
+    .mailing-placeholder{
+      max-width: 720px;
+      padding: 18px;
+      margin-top: 12px;
       border-left: 4px solid #C9922A;
       background: rgba(241,229,196,0.55);
       color: #2A1A14;
@@ -236,12 +248,40 @@
       font-size: 14px;
       line-height: 1.55;
     }
-    .register-placeholder code{
+    .mailing-placeholder code{
       background: rgba(42,26,20,0.08);
       padding: 1px 6px;
       border-radius: 3px;
       font-size: 13px;
     }
+
+    /* Opening video */
+    .opening-video{
+      margin-top: 22px;
+      background: var(--cream-2);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid var(--line);
+    }
+    @media (max-width: 720px){ .opening-video{ padding: 20px; } }
+    .opening-video h2{ margin-top: 0; }
+    .opening-video .ratio{
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      margin-top: 16px;
+    }
+    .opening-video .ratio iframe{
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    /* Foundation band at bottom */
+    section.section.band-deep{ padding-top: 44px; padding-bottom: 44px; }
   </style>
 </head>
 
@@ -270,7 +310,7 @@
     </nav>
   </header>
 
-  <!-- Announcement strip — message comes from ANNOUNCEMENT in app.js. To change the text or disable, edit app.js. -->
+  <!-- Announcement strip — message comes from ANNOUNCEMENT in app.js. -->
   <div class="notice" id="noticeBar" hidden>
     <a class="container notice-inner" id="noticeLink" href="#">
       <span class="notice-tag" id="noticeTag">Upcoming</span>
@@ -283,131 +323,202 @@
     <!-- HERO -->
     <section class="kutir-hero">
       <div class="container">
-        <p class="kicker">With Maharajji's grace — join us online</p>
-        <h1>The Sacred Opening of Neem Karoli Maharaj Kutir</h1>
+        <p class="kicker">A Sanctified Room in Maharajji's Presence</p>
+        <h1>Neem Karoli Maharaj Kutir</h1>
         <p class="lede">
-          A sanctified room kept in Maharajji's blanket and his enduring presence. Join us live online for an evening of satsang, Hanuman Chalisa, and devotion — from anywhere in the world.
+          A small room kept in Maharajji's blanket and his enduring presence — held by Dr. Nirmal Chandra Mungali in the lineage of Neem Karoli Baba. A place for satsang, chanting, and quiet devotion.
         </p>
       </div>
     </section>
 
-    <!-- Event meta -->
-    <section class="section" style="padding-top: 0;">
+    <!-- INTRO -->
+    <section class="section kutir-intro">
       <div class="container">
-        <div class="event-meta">
-          <div class="pill">
-            <div class="label">Date</div>
-            <div class="value">Sunday, 7 June 2026</div>
-          </div>
-          <div class="pill">
-            <div class="label">Time</div>
-            <div class="value">5:00 PM IST</div>
-          </div>
-          <div class="pill">
-            <div class="label">Live on</div>
-            <div class="value"><a href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener" style="color:inherit;">Divine Nectar<br>on YouTube</a></div>
-          </div>
-        </div>
+        <h2>About the Kutir</h2>
+        <p>
+          The <strong>Neem Karoli Maharaj Kutir</strong> is a sanctified room dedicated to <strong>Neem Karoli Baba (Maharajji)</strong>, kept in the warmth of his blanket and the silence of his presence. Long held privately at Dr. Mungali's residence, the Kutir is now opened — modestly, carefully — to devotees who wish to chant, sit in satsang, or simply share a few quiet moments in Maharajji's grace.
+        </p>
+        <p>
+          The Kutir is not a temple or an ashram in the public sense. It is a living, devotional space — a small room with the capacity to hold about twenty people in stillness. From here, we live-stream <strong>SundarKand, Hanuman Chalisa and Vinay Chalisa every Sunday</strong>, host the <strong>Divine Nectar Seekers' Q&amp;A every Wednesday</strong>, and gather periodically for satsang with Dr. Mungali. Visits are warmly welcomed by prior appointment.
+        </p>
       </div>
     </section>
 
-    <!-- Schedule + Online -->
+    <!-- PHOTO GALLERY -->
     <section class="section">
       <div class="container">
-        <div class="kutir-grid">
-          <div>
-            <h2>Program Schedule</h2>
-            <ul class="schedule-list">
-              <li><span class="time">5:00 pm</span><span class="what">Manglacharan, Ganesh Stuti</span></li>
-              <li><span class="time">5:15 pm</span><span class="what">Hanuman Chalisa chanting</span></li>
-              <li><span class="time">5:30 pm</span><span class="what">Reflections by Devotees</span></li>
-              <li><span class="time">5:45 pm</span><span class="what">Satsang with Dr. Mungali</span></li>
-              <li><span class="time">8:00 pm</span><span class="what">Aarti and Prasad</span></li>
-            </ul>
-          </div>
+        <h2>Inside the Kutir</h2>
+        <p class="muted">A few images from the Kutir — Maharajji's blanket, the murti, and the quiet rhythm of the room.</p>
 
-          <div>
-            <h2>Join Us Online</h2>
-            <p class="lead">
-              We warmly invite you to join this sacred gathering live from Neem Karoli Maharaj Kutir through the <a href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener"><strong>Divine Nectar</strong> YouTube channel</a>.
-            </p>
-            <p>
-              May this evening of satsang, Hanuman Chalisa, and devotion bring Maharajji's grace and presence into your home, wherever you may be.
-            </p>
-            <p>
-              <a class="btn primary" href="https://youtube.com/live/eZod6467xCU?feature=share" target="_blank" rel="noopener">Watch live on YouTube</a>
-            </p>
-          </div>
+        <div class="gallery-grid" aria-label="Photo gallery of Neem Karoli Maharaj Kutir">
+          <figure><img src="./assets/kutir-1.jpg" alt="Neem Karoli Maharaj Kutir — interior view 1" loading="lazy" /></figure>
+          <figure><img src="./assets/kutir-2.jpg" alt="Neem Karoli Maharaj Kutir — Maharajji's blanket and altar" loading="lazy" /></figure>
+          <figure><img src="./assets/kutir-3.jpg" alt="Neem Karoli Maharaj Kutir — devotional space" loading="lazy" /></figure>
+          <figure><img src="./assets/kutir-4.jpg" alt="Neem Karoli Maharaj Kutir — chanting and satsang" loading="lazy" /></figure>
         </div>
       </div>
     </section>
 
-    <!-- Livestream embed -->
-    <section class="section" id="watch">
+    <!-- PROGRAM SCHEDULE -->
+    <section class="section schedule-section" id="programs">
       <div class="container">
-        <div class="livestream">
-          <h2>Live stream</h2>
-          <p class="muted">The stream becomes active on Sunday, 7 June 2026 at 5:00 PM IST. You can open this page any time to watch.</p>
+        <h2>Programs from the Kutir</h2>
+        <p class="muted" style="max-width: 60ch;">
+          Live-streamed devotional gatherings, weekly Q&amp;A with Dr. Mungali, periodic satsangs, and visits by appointment.
+        </p>
+
+        <div class="schedule-grid">
+
+          <article class="program" id="sunday-sundarkand">
+            <span class="program__when">Every Sunday · 9:00 AM IST</span>
+            <h3 class="program__title">SundarKand, Hanuman Chalisa, Vinay Chalisa &amp; Aarti</h3>
+            <p class="program__desc">
+              A weekly hour of devotional chanting from the Kutir — SundarKand path, Hanuman Chalisa, Vinay Chalisa, and aarti. Live-streamed on the Divine Nectar YouTube channel; all are warmly welcome to attend in person as well.
+            </p>
+            <p class="program__note">
+              <strong>In-person seating is limited</strong> — the Kutir holds about twenty people. Please request a seat in advance via the visit form below.
+            </p>
+            <p class="program__cta">
+              <a class="btn primary" href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener">Watch on Divine Nectar</a>
+            </p>
+          </article>
+
+          <article class="program" id="wed-qa">
+            <span class="program__when">Every Wednesday</span>
+            <h3 class="program__title">Divine Nectar Seekers' Questions</h3>
+            <p class="program__desc">
+              An open Q&amp;A from the Kutir — Dr. Mungali answers questions from devotees on devotion, dharma, daily practice, and life in Maharajji's grace. Submit your question through the Divine Nectar channel.
+            </p>
+            <p class="program__cta">
+              <a class="btn ghost" href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener">Submit a question</a>
+            </p>
+          </article>
+
+          <article class="program" id="live-satsangs">
+            <span class="program__when">Periodic · Announced in advance</span>
+            <h3 class="program__title">Live Satsangs with Dr. Mungali</h3>
+            <p class="program__desc">
+              Dr. Mungali holds satsang from the Kutir at intervals through the year — extended sittings on devotion, the lineage of Maharajji, and the practice of living a science-rooted, spirit-led life. Announcements are shared via the Divine Nectar YouTube channel and our mailing list.
+            </p>
+            <p class="program__cta">
+              <a class="btn ghost" href="#mailing-list">Join the mailing list</a>
+            </p>
+          </article>
+
+          <article class="program" id="visit">
+            <span class="program__when">By prior appointment only</span>
+            <h3 class="program__title">Visit the Kutir</h3>
+            <p class="program__desc">
+              Devotees are welcome to visit the Kutir for darshan, chanting, or a quiet sitting. To honour the space and the limited capacity, visits are arranged by appointment. Please share your details and we'll reply with a date and time.
+            </p>
+            <p class="program__cta">
+              <a class="btn primary" href="#visit-form">Request a visit</a>
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT FORM -->
+    <section class="section" id="visit-form">
+      <div class="container">
+        <h2>Request a Visit to the Kutir</h2>
+        <p style="max-width: 64ch;">
+          Please fill in the form below with your details and preferred dates. We'll reply over email with a confirmed slot. The Kutir holds about twenty people, so all visits — individual and small group — are managed by appointment.
+        </p>
+
+        <div class="visit-form">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLScyQEb1ZOLqSOeeIjOSKAESm2oLx0wmcqzk1eNE_j7qS8XnyA/viewform?embedded=true"
+            width="640"
+            height="3351"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            title="Visit the Kutir — Appointment Request">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAILING LIST -->
+    <section class="section" id="mailing-list">
+      <div class="container">
+        <h2>Join the Mailing List</h2>
+        <p style="max-width: 64ch;">
+          Receive announcements about upcoming satsangs, live programs from the Kutir, and quiet news from the Foundation. No more than a few emails a month.
+        </p>
+
+        <div class="mailing-list">
+          <h3>Dr. Mungali Seva Foundation — Mailing List</h3>
+          <p>Add your name and email below to receive future announcements.</p>
+
+          <!--
+            ▼▼▼  MAILING LIST FORM  ▼▼▼
+
+            REPLACE the placeholder div below with the embed code from a Google Form
+            once it's created. Setup instructions:
+
+            1. Visit forms.google.com → "Blank form".
+            2. Title:        "Dr. Mungali Seva Foundation — Mailing List"
+               Description:  "Receive announcements about satsangs, live programs from
+                              Neem Karoli Maharaj Kutir, and quiet news from the Foundation."
+            3. Add fields:
+                 (a) Full name      — Short answer, required
+                 (b) Email address  — Short answer, required
+                                      (Response validation → Text → Email format)
+                 (c) City (optional) — Short answer, optional
+            4. Settings → Responses:
+                 ✓ "Collect email addresses" → Verified
+                 ✓ "Send respondents a copy of their response"
+            5. Settings → Presentation → Confirmation message:
+                 "Thank you 🙏 You'll hear from us when there is something
+                  worth sharing — a satsang, a live program from the Kutir, or
+                  news from the Foundation."
+            6. Click "Send" → "<>" (embed) tab → copy the <iframe ...> code.
+            7. Paste that <iframe> here in place of the .mailing-placeholder div below.
+          -->
+
+          <div class="mailing-placeholder">
+            <strong>Embed your Google Form here.</strong>
+            See the comment above this block in <code>neem-karoli-maharaj-kutir.html</code>
+            for step-by-step setup. Once the form exists, paste its
+            <code>&lt;iframe&gt;</code> embed code in place of this placeholder.
+          </div>
+
+          <!-- Example embed (will look like this once the iframe is pasted):
+          <iframe
+            src="https://docs.google.com/forms/d/e/YOUR-FORM-ID/viewform?embedded=true"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            title="Join the Dr. Mungali Seva Foundation mailing list">
+          </iframe>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <!-- OPENING VIDEO -->
+    <section class="section" id="opening">
+      <div class="container">
+        <div class="opening-video">
+          <h2>The Sacred Opening of the Kutir</h2>
+          <p class="muted" style="max-width: 64ch;">
+            A recording of the opening ceremony — an evening of satsang, Hanuman Chalisa, and aarti, held live from Neem Karoli Maharaj Kutir on Sunday, 7 June 2026.
+          </p>
           <div class="ratio">
             <iframe
               src="https://www.youtube.com/embed/eZod6467xCU"
-              title="Neem Karoli Maharaj Kutir — Live Stream"
+              title="Neem Karoli Maharaj Kutir — Sacred Opening Ceremony"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen>
             </iframe>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Register / email capture -->
-    <section class="section" id="register">
-      <div class="container">
-        <div class="register">
-          <h2>Get a reminder &amp; the livestream link by email</h2>
-          <p class="why">
-            Leave your name and email and we'll send you the livestream link a few hours before the gathering begins, plus a reminder on the morning of 7 June. No spam, just the link.
-          </p>
-
-          <!--
-            ▼▼▼  EMAIL CAPTURE FORM  ▼▼▼
-
-            REPLACE the placeholder div below with the embed code from a Google Form
-            once it's created. Setup instructions:
-
-            1. Visit forms.google.com and create a new form.
-            2. Title it: "Neem Karoli Maharaj Kutir — Livestream Notification"
-            3. Add fields: (a) Full name (Short answer, required)
-                          (b) Email address (Short answer, required; turn on "Response validation → Email")
-            4. Form Settings → Responses:
-                 ✓ "Collect email addresses" → Verified
-                 ✓ "Send respondents a copy of their response"
-            5. Settings → Presentation → "Confirmation message":
-                 Paste the message below (it auto-shows after they submit):
-                 "Thank you 🙏 The Neem Karoli Maharaj Kutir livestream is on Sunday, 7 June 2026 at 5:00 PM IST.
-                 Watch live here: https://youtube.com/live/eZod6467xCU
-                 We'll send a reminder a few hours before."
-            6. Click "Send" → switch to the "<>" (embed) tab → copy the <iframe ...> code.
-            7. Paste that <iframe> here in place of the .register-placeholder div below.
-          -->
-<!--
-          <div class="register-placeholder">
-            <strong>Embed your Google Form here.</strong>
-            See the comment above this block in <code>neem-karoli-maharaj-kutir.html</code> for step-by-step
-            setup. Once the form exists, paste its <code>&lt;iframe&gt;</code> embed code
-            in place of this placeholder. Until then, visitors can use the
-            <strong>Watch live on YouTube</strong> button above.
-          </div>
--->
-          <!--  Example embed (will look like this once you paste in the iframe code):
-          <iframe
-            src="https://docs.google.com/forms/d/e/YOUR-FORM-ID/viewform?embedded=true"
-            loading="lazy"
-            referrerpolicy="no-referrer">
-          </iframe>
-          -->
-               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScDjXB6sEduIU45pil8ybsMnCUU5fhTaExkgu2N-3WeIlhtBA/viewform?embedded=true" width="640" height="1117" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
       </div>
     </section>
@@ -444,41 +555,149 @@
     <span>Support the Mission</span>
   </a>
 
-  <!-- Structured data: Online Event + Place -->
+  <!-- Structured data: Place (the Kutir) + Person (Maharajji) + recurring Events + WebPage + Breadcrumb -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "Sacred Opening of Neem Karoli Maharaj Kutir",
-    "alternateName": ["Neem Karoli Maharaj Kutir Opening", "Maharajji Kutir Opening"],
-    "description": "An evening of satsang, Hanuman Chalisa, and devotion at the opening of Neem Karoli Maharaj Kutir — a sanctified room dedicated to Neem Karoli Baba (Maharajji). Streamed live online via the Divine Nectar YouTube channel.",
-    "startDate": "2026-06-07T17:00:00+05:30",
-    "endDate": "2026-06-07T20:30:00+05:30",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-    "location": {
-      "@type": "VirtualLocation",
-      "url": "https://youtube.com/live/eZod6467xCU"
-    },
-    "image": "https://drmungali.org/assets/kutiya.jpg",
-    "organizer": {
-      "@type": "NGO",
-      "name": "Dr. Mungali Seva Foundation",
-      "url": "https://drmungali.org/"
-    },
-    "performer": {
-      "@type": "Person",
-      "name": "Dr. Nirmal Chandra Mungali",
-      "url": "https://drmungali.org/about.html"
-    },
-    "about": {
-      "@type": "Person",
-      "name": "Neem Karoli Baba",
-      "alternateName": ["Neem Karoli Maharaj", "Maharajji", "Neeb Karori Baba"],
-      "sameAs": "https://en.wikipedia.org/wiki/Neem_Karoli_Baba"
-    },
-    "isAccessibleForFree": true,
-    "inLanguage": ["en", "hi"]
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#webpage",
+        "url": "https://drmungali.org/neem-karoli-maharaj-kutir.html",
+        "name": "Neem Karoli Maharaj Kutir",
+        "description": "Neem Karoli Maharaj Kutir — a sanctified room dedicated to Neem Karoli Baba (Maharajji), held by Dr. Nirmal Chandra Mungali. Live SundarKand and Hanuman Chalisa on Sundays, Divine Nectar Q&A on Wednesdays, periodic satsangs, and visits by appointment.",
+        "isPartOf": { "@id": "https://drmungali.org/#website" },
+        "primaryImageOfPage": { "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#kutir" },
+        "about": { "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#kutir" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": ["Place", "LandmarksOrHistoricalBuildings"],
+        "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#kutir",
+        "name": "Neem Karoli Maharaj Kutir",
+        "alternateName": ["Neem Karoli Baba Kutir", "Maharajji Kutir", "Neem Karoli Maharaj Kutiya"],
+        "description": "A sanctified room dedicated to Neem Karoli Baba (Maharajji), kept in his blanket and his enduring presence. Held by Dr. Nirmal Chandra Mungali in the lineage of Maharajji; opened to devotees for chanting, satsang, and visits by appointment.",
+        "image": [
+          "https://drmungali.org/assets/kutiya.jpg",
+          "https://drmungali.org/assets/kutir-1.jpg",
+          "https://drmungali.org/assets/kutir-2.jpg",
+          "https://drmungali.org/assets/kutir-3.jpg",
+          "https://drmungali.org/assets/kutir-4.jpg"
+        ],
+        "maximumAttendeeCapacity": 20,
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN"
+        },
+        "isAccessibleForFree": true,
+        "publicAccess": false,
+        "smokingAllowed": false,
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "description": "Open by prior appointment only."
+        },
+        "containedInPlace": { "@id": "https://drmungali.org/#organization" },
+        "about": { "@id": "https://drmungali.org/#neem-karoli-baba" },
+        "url": "https://drmungali.org/neem-karoli-maharaj-kutir.html"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://drmungali.org/#neem-karoli-baba",
+        "name": "Neem Karoli Baba",
+        "alternateName": ["Neem Karoli Maharaj", "Maharajji", "Neeb Karori Baba"],
+        "description": "Twentieth-century Hindu guru and devotee of Hanuman, revered across India and worldwide for his teachings of love, service, and remembrance of Ram.",
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Neem_Karoli_Baba",
+          "https://www.wikidata.org/wiki/Q1318099"
+        ]
+      },
+      {
+        "@type": "EventSeries",
+        "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#sunday-sundarkand",
+        "name": "SundarKand, Hanuman Chalisa, Vinay Chalisa & Aarti — Live from Neem Karoli Maharaj Kutir",
+        "alternateName": ["Sunday SundarKand at Maharaj Kutir", "Sunday Hanuman Chalisa Live"],
+        "description": "Weekly devotional gathering at Neem Karoli Maharaj Kutir — SundarKand path, Hanuman Chalisa, Vinay Chalisa and aarti. Live-streamed on the Divine Nectar YouTube channel; in-person seating by appointment (capacity ~20).",
+        "eventSchedule": {
+          "@type": "Schedule",
+          "byDay": "https://schema.org/Sunday",
+          "startTime": "09:00",
+          "scheduleTimezone": "Asia/Kolkata"
+        },
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": [
+          { "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#kutir" },
+          { "@type": "VirtualLocation", "url": "https://www.youtube.com/@DivineNectar" }
+        ],
+        "organizer": { "@id": "https://drmungali.org/#organization" },
+        "performer": { "@id": "https://drmungali.org/#dr-mungali" },
+        "isAccessibleForFree": true,
+        "inLanguage": ["hi", "en"]
+      },
+      {
+        "@type": "EventSeries",
+        "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#wed-qa",
+        "name": "Divine Nectar Seekers' Questions — Live from Neem Karoli Maharaj Kutir",
+        "description": "Weekly Q&A session from the Kutir — Dr. Mungali answers devotees' questions on devotion, dharma, and daily practice in Maharajji's lineage.",
+        "eventSchedule": {
+          "@type": "Schedule",
+          "byDay": "https://schema.org/Wednesday",
+          "scheduleTimezone": "Asia/Kolkata"
+        },
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": { "@type": "VirtualLocation", "url": "https://www.youtube.com/@DivineNectar" },
+        "organizer": { "@id": "https://drmungali.org/#organization" },
+        "performer": { "@id": "https://drmungali.org/#dr-mungali" },
+        "isAccessibleForFree": true,
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Event",
+        "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#sundarkand-15-june-2026",
+        "name": "Live SundarKand Path from Neem Karoli Maharaj Kutir",
+        "description": "A live SundarKand path from Neem Karoli Maharaj Kutir, streamed on the Divine Nectar YouTube channel.",
+        "startDate": "2026-06-15T18:00:00+05:30",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+        "location": [
+          { "@id": "https://drmungali.org/neem-karoli-maharaj-kutir.html#kutir" },
+          { "@type": "VirtualLocation", "url": "https://www.youtube.com/@DivineNectar" }
+        ],
+        "image": "https://drmungali.org/assets/kutiya.jpg",
+        "organizer": { "@id": "https://drmungali.org/#organization" },
+        "performer": { "@id": "https://drmungali.org/#dr-mungali" },
+        "about": { "@id": "https://drmungali.org/#neem-karoli-baba" },
+        "isAccessibleForFree": true,
+        "inLanguage": ["hi", "en"]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://drmungali.org/#organization",
+        "name": "Dr. Mungali Seva Foundation",
+        "url": "https://drmungali.org/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://drmungali.org/#dr-mungali",
+        "name": "Dr. Nirmal Chandra Mungali",
+        "alternateName": ["Dr. Mungali", "Dr. N.C. Mungali"],
+        "url": "https://drmungali.org/about.html"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://drmungali.org/#website",
+        "url": "https://drmungali.org/",
+        "name": "Dr. Mungali Seva Foundation"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drmungali.org/" },
+          { "@type": "ListItem", "position": 2, "name": "Neem Karoli Maharaj Kutir", "item": "https://drmungali.org/neem-karoli-maharaj-kutir.html" }
+        ]
+      }
+    ]
   }
   </script>
 

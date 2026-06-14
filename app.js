@@ -35,7 +35,7 @@ const ANNOUNCEMENT = {
   messages: [
     {
       tag: "Upcoming",
-      text: "Join us on 7 June at 5:00 PM IST for the sacred opening of Neem Karoli Maharaj Kutir",
+      text: "Join us on 15 June at 6:00 PM IST for Live SundarKand Path from Maharajji's Kutir",
       link: "./neem-karoli-maharaj-kutir.html",
     },
     // Add additional announcements here when needed, e.g.:
