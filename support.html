@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Support the Dr. Mungali Seva Foundation — UPI, Bank Transfer & International | drmungali.org</title>
+  <meta name="description" content="Support Dr. Mungali Seva Foundation through UPI, direct bank transfer (NEFT/IMPS/RTGS), or — from outside India — YouTube Super Thanks and channel memberships on Divine Nectar." />
+  <meta name="author" content="Dr. Mungali Seva Foundation" />
+  <meta name="keywords" content="Donate to Dr. Mungali Seva Foundation, support Divine Nectar, Neem Karoli Maharaj seva, UPI donation India, NEFT donation, ICICI Haldwani, Dr. Mungali" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#5F1515" />
+
+  <link rel="canonical" href="https://drmungali.org/support.html" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Dr. Mungali Seva Foundation" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Support the Dr. Mungali Seva Foundation" />
+  <meta property="og:description" content="Contribute through UPI, direct bank transfer, or — from outside India — YouTube Super Thanks and channel memberships." />
+  <meta property="og:image" content="https://drmungali.org/assets/og-cover.jpg" />
+  <meta property="og:url" content="https://drmungali.org/support.html" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Support the Dr. Mungali Seva Foundation" />
+  <meta name="twitter:description" content="UPI · Bank Transfer · International — your support helps satsang, seva, and dharmic projects continue in Maharajji's lineage." />
+  <meta name="twitter:image" content="https://drmungali.org/assets/og-cover.jpg" />
+
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+
+  <style>
+    /* Compact hero for the support page — warm but not loud */
+    .support-hero{
+      position: relative;
+      padding: 80px 4vw 56px;
+      background:
+        radial-gradient(900px 360px at 80% -10%, rgba(232,184,75,0.32), transparent 60%),
+        radial-gradient(700px 360px at 10% 110%, rgba(139,26,26,0.10), transparent 55%),
+        linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .support-hero .inner{
+      width: min(900px, 92vw);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .support-hero .kicker{
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--maroon-ink);
+      margin: 0 0 14px;
+      font-weight: 600;
+    }
+    .support-hero h1{
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: clamp(34px, 4.4vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 14px;
+      color: var(--maroon-ink);
+    }
+    .support-hero p.lede{
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--body);
+      max-width: 60ch;
+      margin: 0 auto;
+    }
+    .support-hero::after{
+      content:"";
+      position: absolute; left: 0; right: 0; bottom: -1px;
+      height: 3px;
+      background: linear-gradient(90deg,
+        rgba(201,146,42,0) 0%,
+        rgba(201,146,42,0.65) 20%,
+        rgba(185,124,26,0.85) 50%,
+        rgba(201,146,42,0.65) 80%,
+        rgba(201,146,42,0) 100%
+      );
+      pointer-events: none;
+    }
+
+    /* Section rhythm */
+    main .section{ padding-top: 44px; padding-bottom: 44px; }
+    @media (max-width: 720px){
+      main .section{ padding-top: 28px; padding-bottom: 28px; }
+    }
+
+    /* Three-card payment grid */
+    .pay-grid{
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+      margin-top: 8px;
+    }
+    @media (min-width: 880px){
+      .pay-grid{ grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    }
+
+    .pay-card{
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px 24px 22px;
+      box-shadow: 0 8px 22px rgba(42,26,20,0.06);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .pay-card::before{
+      content:"";
+      position: absolute; left: 0; right: 0; top: 0;
+      height: 3px;
+      border-radius: 18px 18px 0 0;
+      background: linear-gradient(90deg, rgba(232,184,75,0.85), rgba(185,124,26,0.85));
+    }
+    .pay-card__tag{
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #5F1515;
+      background: rgba(232,184,75,0.22);
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+    .pay-card h2{
+      margin: 0 0 6px;
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--maroon-ink);
+      line-height: 1.2;
+    }
+    .pay-card .sub{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .pay-card .field{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4px 12px;
+      align-items: center;
+      padding: 10px 14px;
+      background: var(--cream-2);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+    .pay-card .field:last-of-type{ margin-bottom: 0; }
+    .pay-card .field__content{
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .pay-card .field .label{
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .pay-card .field .value{
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.4;
+      overflow-wrap: anywhere;
+      word-break: normal;
+    }
+    .pay-card .field .copy-btn{
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      color: var(--maroon-ink);
+      cursor: pointer;
+      transition: background .15s ease, color .15s ease;
+    }
+    .pay-card .field .copy-btn:hover{
+      background: var(--maroon-ink);
+      color: #FFF8EA;
+      border-color: var(--maroon-ink);
+    }
+    .pay-card .field .copy-btn.is-copied{
+      background: #2F6E3F;
+      color: #FFF8EA;
+      border-color: #2F6E3F;
+    }
+
+    /* QR for UPI card */
+    .pay-card .qr-wrap{
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+    }
+    .pay-card .qr-wrap img{
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 6px;
+    }
+    @media (max-width: 720px){
+      .pay-card .qr-wrap img{ max-width: 280px; }
+    }
+
+    /* Apps line */
+    .pay-card .apps{
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    /* International card */
+    .pay-card .international-cta{
+      margin-top: auto;
+      padding-top: 14px;
+    }
+    .pay-card .btn.primary{
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--saffron), var(--saffron-2));
+      color: var(--ink);
+      font-weight: 700;
+      border: 1px solid rgba(42,26,20,0.18);
+      box-shadow: 0 6px 16px rgba(201,146,42,0.32);
+      text-decoration: none;
+    }
+    .pay-card .btn.primary:hover{
+      background: linear-gradient(180deg, var(--saffron-2), var(--gold-warm));
+      color: #FFF8EA;
+    }
+
+    .pay-card .note{
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(42,26,20,0.14);
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Where the contribution goes */
+    .impact-grid{
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 720px){
+      .impact-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+    .impact-card{
+      background: var(--cream-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px 22px 20px;
+    }
+    .impact-card h3{
+      margin: 0 0 6px;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--maroon-ink);
+    }
+    .impact-card p{
+      margin: 0;
+      color: var(--body);
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    /* Trust block */
+    .trust-block{
+      margin-top: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--maroon-ink);
+      border-radius: 12px;
+      padding: 22px 24px;
+      max-width: 720px;
+    }
+    .trust-block dl{
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px 0;
+    }
+    @media (min-width: 600px){
+      .trust-block dl{ grid-template-columns: 180px 1fr; gap: 10px 18px; }
+    }
+    .trust-block dt{
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 600;
+      padding-top: 4px;
+    }
+    .trust-block dd{
+      margin: 0;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a class="brand" href="index.html" aria-label="Go to home">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="./assets/ram.png" alt="Ram" class="brand-icon" />
+      </span>
+      <span class="brand-text">Dr. Mungali Seva Foundation </span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a href="about.html">About</a>
+      <a href="founder-circle.html">Founder Circle</a>
+      <a href="neem-karoli-maharaj-kutir.html">Maharaj Kutir</a>
+      <a href="videos.html">Videos</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="nav-cta active" href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <!-- Announcement strip -->
+  <div class="notice" id="noticeBar" hidden>
+    <a class="container notice-inner" id="noticeLink" href="#">
+      <span class="notice-tag" id="noticeTag">Upcoming</span>
+      <span class="notice-text" id="noticeText"></span>
+      <span class="notice-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="support-hero">
+      <div class="inner">
+        <p class="kicker">Walk with us in seva</p>
+        <h1>Your support makes this possible</h1>
+        <p class="lede">
+          If this work helps you, you may choose to support it — so that more satsang, seva, and dharmic projects can take shape in Maharajji's lineage. Below are three ways to contribute.
+        </p>
+      </div>
+    </section>
+
+    <!-- Three payment cards -->
+    <section class="section">
+      <div class="container">
+        <div class="pay-grid">
+
+          <!-- 1. UPI -->
+          <article class="pay-card" id="upi">
+            <span class="pay-card__tag">India · UPI</span>
+            <h2>Instant UPI Transfer</h2>
+            <p class="sub">Scan the QR code or copy our UPI ID into any UPI app.</p>
+
+            <div class="field">
+              <div class="field__content">
+                <span class="label">UPI ID</span>
+                <span class="value" id="upiId">MSDRMUNGALISEVAFOUNDATION.eazypay@icici</span>
+              </div>
+              <button class="copy-btn" type="button" data-copy="MSDRMUNGALISEVAFOUNDATION.eazypay@icici" aria-label="Copy UPI ID">Copy</button>
+            </div>
+
+            <div class="qr-wrap">
+              <img src="./assets/upi-qr.png" alt="UPI QR code for Dr. Mungali Seva Foundation (ICICI Bank)" loading="lazy" />
+            </div>
+
+            <p class="apps">Works with <strong>WhatsApp Pay</strong>, Google Pay, PhonePe, Paytm, BHIM and other UPI apps.</p>
+          </article>
+
+          <!-- 2. Bank Transfer -->
+          <article class="pay-card" id="bank">
+            <span class="pay-card__tag">India · Bank Transfer</span>
+            <h2>Direct Bank Transfer</h2>
+            <p class="sub">For larger contributions and recurring pledges. Use NEFT, IMPS, or RTGS from any Indian bank account.</p>
+
+            <div class="field">
+              <div class="field__content">
+                <span class="label">A/C name</span>
+                <span class="value">DR MUNGALI SEVA FOUNDATION</span>
+              </div>
+              <button class="copy-btn" type="button" data-copy="DR MUNGALI SEVA FOUNDATION" aria-label="Copy account name">Copy</button>
+            </div>
+
+            <div class="field">
+              <div class="field__content">
+                <span class="label">A/C no.</span>
+                <span class="value">024005004725</span>
+              </div>
+              <button class="copy-btn" type="button" data-copy="024005004725" aria-label="Copy account number">Copy</button>
+            </div>
+
+            <div class="field">
+              <div class="field__content">
+                <span class="label">IFSC</span>
+                <span class="value">ICIC0000240</span>
+              </div>
+              <button class="copy-btn" type="button" data-copy="ICIC0000240" aria-label="Copy IFSC code">Copy</button>
+            </div>
+
+            <div class="field">
+              <div class="field__content">
+                <span class="label">Bank</span>
+                <span class="value">ICICI Bank, Haldwani Branch</span>
+              </div>
+              <button class="copy-btn" type="button" data-copy="ICICI Bank, Haldwani Branch" aria-label="Copy bank and branch">Copy</button>
+            </div>
+
+            <p class="note">Once your transfer is complete, a short note to the Foundation helps us acknowledge your contribution.</p>
+          </article>
+
+          <!-- 3. International -->
+          <article class="pay-card" id="international">
+            <span class="pay-card__tag">Outside India</span>
+            <h2>Support from Outside India</h2>
+            <p class="sub">
+              The Foundation is currently able to accept direct donations only from within India due to regulatory requirements. If you're abroad, you can still support this work meaningfully.
+            </p>
+
+            <p style="margin: 0 0 12px; color: var(--body); font-size: 0.98rem; line-height: 1.6;">
+              Contribute through <strong>YouTube Super Thanks</strong> on any Divine Nectar video, or join the channel through <strong>Channel Memberships</strong>.
+            </p>
+
+            <div class="international-cta">
+              <a class="btn primary" href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener">Support via YouTube →</a>
+            </div>
+
+            <p class="note">Memberships also unlock the Divine Nectar Seekers' Q&amp;A from the Kutir every Wednesday.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Where the contribution goes -->
+    <section class="section" id="where">
+      <div class="container">
+        <h2>Where your contribution goes</h2>
+        <p class="lead" style="max-width: 64ch;">
+          Every contribution — small or large — helps us carry the work forward with care and integrity.
+        </p>
+
+        <div class="impact-grid">
+          <article class="impact-card">
+            <h3>Satsang &amp; Live Programs</h3>
+            <p>Production and streaming of weekly SundarKand, Hanuman Chalisa, Vinay Chalisa and satsangs from Neem Karoli Maharaj Kutir.</p>
+          </article>
+          <article class="impact-card">
+            <h3>Seva &amp; Dharmic Projects</h3>
+            <p>Stewardship of the Himalayan Sanctuary vision, medical seva, and ongoing temple and bhandara initiatives.</p>
+          </article>
+          <article class="impact-card">
+            <h3>Documentation &amp; Outreach</h3>
+            <p>Archiving teachings, creating Divine Chants resources, and sharing Maharajji's lineage widely and freely.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust / Foundation block -->
+    <section class="section band-deep" id="foundation-info">
+      <div class="container">
+        <h2>About the Foundation</h2>
+        <p class="lead">
+          Dr. Mungali Seva Foundation is founded by Dr. Nirmal Chandra Mungali, in the lineage of Neem Karoli Baba (Maharajji), to support satsang, seva, and the preservation of dharmic wisdom.
+        </p>
+
+        <div class="trust-block">
+          <dl>
+            <dt>Legal name</dt>
+            <dd>DR MUNGALI SEVA FOUNDATION</dd>
+
+            <dt>Banking partner</dt>
+            <dd>ICICI Bank, Haldwani Branch, Uttarakhand, India</dd>
+
+            <dt>Website</dt>
+            <dd><a href="https://drmungali.org/" style="color: inherit; text-decoration: underline;">drmungali.org</a></dd>
+
+            <dt>Contact</dt>
+            <dd><a href="index.html#contact" style="color: inherit; text-decoration: underline;">Send a note via the contact form →</a></dd>
+          </dl>
+        </div>
+
+        <div class="cta-row" style="margin-top: 24px;">
+          <a class="btn ghost" href="about.html">About Dr. Mungali</a>
+          <a class="btn ghost" href="projects.html">Our Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-row">
+        <p class="tiny muted">© <span id="year"></span> Dr. Mungali Seva Foundation. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a id="footerYt" href="https://www.youtube.com/@DivineNectar" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Structured data: WebPage + Organization with paymentAccepted + DonateAction + Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://drmungali.org/support.html#webpage",
+        "url": "https://drmungali.org/support.html",
+        "name": "Support the Dr. Mungali Seva Foundation",
+        "description": "Three ways to support the Dr. Mungali Seva Foundation — UPI, direct bank transfer, and YouTube for supporters outside India.",
+        "isPartOf": { "@id": "https://drmungali.org/#website" },
+        "about": { "@id": "https://drmungali.org/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "NGO",
+        "@id": "https://drmungali.org/#organization",
+        "name": "Dr. Mungali Seva Foundation",
+        "legalName": "DR MUNGALI SEVA FOUNDATION",
+        "url": "https://drmungali.org/",
+        "logo": "https://drmungali.org/assets/ram.png",
+        "image": "https://drmungali.org/assets/og-cover.jpg",
+        "founder": { "@id": "https://drmungali.org/#dr-mungali" },
+        "areaServed": { "@type": "Country", "name": "India" },
+        "paymentAccepted": ["UPI", "Bank Transfer (NEFT/IMPS/RTGS)", "YouTube Super Thanks", "YouTube Channel Memberships"],
+        "potentialAction": {
+          "@type": "DonateAction",
+          "name": "Support the Foundation",
+          "target": "https://drmungali.org/support.html",
+          "recipient": { "@id": "https://drmungali.org/#organization" }
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://drmungali.org/#dr-mungali",
+        "name": "Dr. Nirmal Chandra Mungali",
+        "url": "https://drmungali.org/about.html"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://drmungali.org/#website",
+        "url": "https://drmungali.org/",
+        "name": "Dr. Mungali Seva Foundation"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drmungali.org/" },
+          { "@type": "ListItem", "position": 2, "name": "Support", "item": "https://drmungali.org/support.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Delegated copy-to-clipboard for all .copy-btn buttons with data-copy
+    document.addEventListener("click", function (e) {
+      const btn = e.target.closest(".copy-btn");
+      if (!btn) return;
+      const text = btn.getAttribute("data-copy") || "";
+      if (!text) return;
+
+      const onSuccess = () => {
+        const original = btn.textContent;
+        btn.textContent = "Copied ✓";
+        btn.classList.add("is-copied");
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove("is-copied");
+        }, 1600);
+      };
+
+      const onFail = () => {
+        alert("Could not copy. Please select and copy manually:\n\n" + text);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(onSuccess, onFail);
+      } else {
+        // Fallback for older browsers
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); onSuccess(); } catch { onFail(); }
+        document.body.removeChild(ta);
+      }
+    });
+  </script>
+  <script src="./app.js" defer></script>
+</body>
+</html>
