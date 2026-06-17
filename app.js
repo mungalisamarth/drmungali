@@ -35,7 +35,7 @@ const ANNOUNCEMENT = {
   messages: [
     {
       tag: "Upcoming",
-      text: "Join us on 15 June at 6:00 PM IST for Live SundarKand Path from Maharajji's Kutir",
+      text: "Join us on Sunday, 21 June at 9:00 AM IST for Live Chating from Maharajji's Kutir",
       link: "./neem-karoli-maharaj-kutir.html",
     },
     // Add additional announcements here when needed, e.g.:
