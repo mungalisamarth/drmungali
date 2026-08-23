@@ -59,6 +59,18 @@
   </url>
 
   <url>
+    <loc>https://drmungali.org/film</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://drmungali.org/assets/in-the-presence-of-maharajji-documentary-frame01.jpg</image:loc>
+      <image:title>In the Presence of Maharaj-ji — a feature documentary</image:title>
+      <image:caption>Krishna Das and Dr. Nirmal Mungali beside the fire, mid-conversation</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://drmungali.org/neem-karoli-maharaj-kutir.html</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>

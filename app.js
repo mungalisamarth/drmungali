@@ -34,6 +34,11 @@ const ANNOUNCEMENT = {
   rotateMs: 6000, // cycle interval when more than one message
   messages: [
     {
+      tag: "New",
+      text: "In the Presence of Maharaj-ji — help carry these stories of grace forward. Watch the trailer & support the film",
+      link: "./film.html",
+    },
+    {
       tag: "Upcoming",
       text: "Join us every Sunday, at 9:00 AM IST for Live Chating from Maharajji's Kutir",
       link: "./neem-karoli-maharaj-kutir.html",
