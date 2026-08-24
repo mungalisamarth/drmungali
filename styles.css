@@ -219,9 +219,13 @@ p{ line-height:1.7; margin:0.6rem 0; color: var(--body); }
 a.notice-inner{ text-decoration: none; color: inherit; }
 a.notice-inner:hover .notice-text{ text-decoration: underline; }
 .notice-arrow{ font-weight: 700; padding-left: 6px; }
-/* Fade transition for rolling announcements */
-.notice{ transition: opacity 220ms ease; }
-.notice.notice-fading{ opacity: 0; }
+/* Fade transition for rolling announcements.
+   Fade the INNER content only — never the .notice bar itself — so the
+   saffron background stays fully opaque throughout. Fading the whole bar's
+   opacity briefly reveals whatever sits behind it (the cream page
+   background), which reads as a flash of white mid-transition. */
+.notice-inner{ transition: opacity 220ms ease; }
+.notice.notice-fading .notice-inner{ opacity: 0; }
 
 /* ===== Hero ===== */
 .hero{

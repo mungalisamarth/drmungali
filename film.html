@@ -149,9 +149,12 @@
     }
     .film-hero h1{
       color: #FFF8EA;
-      font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+      font-size: clamp(1.9rem, 4.6vw, 3.4rem);
       line-height: 1.08;
       margin: 0 0 16px;
+      /* On narrow screens the title wraps to two lines; balance them evenly
+         instead of leaving a lone word (e.g. "ji") stranded on its own line. */
+      text-wrap: balance;
     }
     .film-hero .hero-statement{
       color: rgba(255,248,234,0.90);

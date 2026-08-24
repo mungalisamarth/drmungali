@@ -55,9 +55,11 @@ const ANNOUNCEMENT = {
     bar.hidden = true;
     return;
   }
+  const inner = bar.querySelector(".notice-inner");
   const tagEl  = document.getElementById("noticeTag");
   const textEl = document.getElementById("noticeText");
   const linkEl = document.getElementById("noticeLink");
+  let current = 0;
 
   function apply(msg) {
     if (tagEl)  tagEl.textContent  = msg.tag  || "";
@@ -65,19 +67,44 @@ const ANNOUNCEMENT = {
     if (linkEl) linkEl.href        = msg.link || "#";
   }
 
+  // Different messages wrap to different numbers of lines (especially on
+  // mobile), which used to make the bar grow/shrink on every rotation and
+  // shove the page content below it (e.g. an in-progress trailer) up and
+  // down. Reserve a fixed height up front — tall enough for whichever
+  // configured message needs the most room at the current viewport width —
+  // so the bar's height never changes as it cycles. Recomputed on resize
+  // since the required height depends on viewport width.
+  function lockHeight() {
+    if (!inner || ANNOUNCEMENT.messages.length < 2) return;
+    inner.style.minHeight = "0px";
+    let max = 0;
+    ANNOUNCEMENT.messages.forEach((msg) => {
+      apply(msg);
+      max = Math.max(max, inner.getBoundingClientRect().height);
+    });
+    inner.style.minHeight = max + "px";
+    apply(ANNOUNCEMENT.messages[current]);
+  }
+
   // Show first message immediately, then unhide the bar
-  apply(ANNOUNCEMENT.messages[0]);
+  apply(ANNOUNCEMENT.messages[current]);
   bar.hidden = false;
+  lockHeight();
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(lockHeight, 150);
+  });
 
   // If more than one message, cycle them
   if (ANNOUNCEMENT.messages.length > 1) {
-    let i = 0;
     setInterval(() => {
-      i = (i + 1) % ANNOUNCEMENT.messages.length;
+      current = (current + 1) % ANNOUNCEMENT.messages.length;
       // Fade-out, swap, fade-in for a gentler transition
       bar.classList.add("notice-fading");
       setTimeout(() => {
-        apply(ANNOUNCEMENT.messages[i]);
+        apply(ANNOUNCEMENT.messages[current]);
         bar.classList.remove("notice-fading");
       }, 250);
     }, Math.max(2500, ANNOUNCEMENT.rotateMs));
